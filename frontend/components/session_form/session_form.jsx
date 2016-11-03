@@ -18,14 +18,14 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			this.props.router.push("/main");
 		}
 	}
 
 	handleDemo(e){
-
 		e.preventDefault();
 		this.props.login({user:{username: 'monnorcurphy', password: 'password' }})
+		this.redirectIfLoggedIn()
 	}
 
 	update(field) {
@@ -38,14 +38,6 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm({user});
-	}
-
-	navLink() {
-		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
-		} else {
-			return <Link to="/login">log in instead</Link>;
-		}
 	}
 
 	renderErrors() {
@@ -61,32 +53,40 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		let header;
+		if (this.props.formType === 'login'){
+			header = 'Login'
+		}else {
+			header= 'Sign Up'
+		}
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
 					<br/>
-					Please {this.props.formType} or {this.navLink()}
-					{this.renderErrors()}
+
+				{this.renderErrors()}
 					<div className="login-form">
 						<br/>
-						<label> Username:
+						<h2 className='signup-or-login'>{header}</h2>
+						<label className='signup-or-login'>Username:
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
 						<br/>
-						<label> Password:
+						<label className='signup-or-login'> Password:
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
 								className="login-input" />
 						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input className='button' type="submit" value="Submit" />
 					</div>
 				</form>
-				<button onClick={this.handleDemo}>Demo!</button>
+				<br></br>
+				<input className='button' type= "submit" value="Demo" onClick={this.handleDemo}/>
 			</div>
 		);
 	}

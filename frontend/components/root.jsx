@@ -7,31 +7,33 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // react components
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
-import Splash from './splash'
+import MovieIndexContainer from './movie_index/movie_index_container';
+import Splash from './splash/splash_container';
 
 const Root = ({ store }) => {
 
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
-      replace('/login');
+      replace('/');
     }
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
-    }
-  }
+      replace('/main');
+    };
+  };
+
 
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={Splash}/>
-        <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path="/guest" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
+        <Route path="/" component={App} onEnter={_redirectIfLoggedIn}>
+          <IndexRoute component={Splash}/>
+        </Route>
+        <Route path="/main" component={MovieIndexContainer} onEnter={_ensureLoggedIn}/>
       </Router>
     </Provider>
   );

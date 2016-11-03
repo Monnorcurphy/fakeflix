@@ -14,18 +14,33 @@
  *= require_self
  */
 
-
-nav.login-signup > a{
-  border: solid black 2px;
+div.login-signup > a{
+  font-size: 14px;
   border-radius: 5px;
-  background-color: black;
   color: white;
-  text-decoration: none;
+  background-color: red;
+  border: none;
+  padding: 10px;
+}
+
+h2.signup-or-login{
+  text-align: center;
+  color: white;
+}
+
+label.signup-or-login{
+  color: white;
+}
+
+header.logo{
+  display: flex;
+  width: 50%;
 }
 a.header-link{
   text-decoration: none;
   color: red;
 }
+
 h2.header-name{
   display: flex;
   float: right;
@@ -35,10 +50,122 @@ img.splash-image{
   height: 600px;
   z-index: -100;
 }
-
-/*nav.login-signup >a:first-child{
-  color: red;
+div.login-signup{
+  display: flex;
+  float: right;
+  width: 50%;
+  justify-content: flex-end;
 }
-nav.login-signup >a:last-child{
-  color: lightgreen;
-}*/
+
+div.over-demo{
+  position: fixed;
+  top: 200px;
+  left: 50px;
+}
+
+div.over-demo > h2{
+  color: white
+}
+div.over-demo > p{
+  color: white
+}
+
+div.splash-div{
+  min-width: 200px;
+  min-height: 700px;
+  max-height: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://media.giphy.com/media/kyNZGsYkvweqc/giphy.gif");
+}
+
+input.button {
+  font: Sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+button {
+  font: Sans-serif;
+  font-size: 12px;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+button.splash-demo{
+  position: fixed;
+  font-size: 16px;
+  top: 300px;
+  left: 50px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+header{
+  position: absolute;
+}
+
+div.main-header{
+  border: black solid 2px;
+  display: flex;
+  background-image: url('http://guyspeed.com/files/2012/02/Groundhog-Day-Poster.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 300px;
+
+}
+
+modal.modal{
+  background-color: black;
+}
+
+div.main-header > button{
+  max-height: 30px;
+  position: fixed;
+  display: flex;
+  right: 10px;
+  top: 10px;
+}
+div.main-header > input.button{
+  max-height: 30px;
+  position: fixed;
+  display: flex;
+  left: 10px;
+  top: 200px;
+}
+input.search{
+  max-height: 30px;
+  position: fixed;
+  display: flex;
+  left: 150px;
+  top: 10px;
+}
+
+span.main-movies{
+  display: flex;
+  max-height: 300px;
+  max-width: 800px;
+}
+
+span.main-movies > img{
+  margin: 10px;
+  padding: 10px
+  justify-content: space-around;
+  max-width: 100px;
+  max-height: 200px;
+}

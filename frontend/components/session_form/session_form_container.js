@@ -3,19 +3,18 @@ import { login, logout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session}, ownProps) => ({
   loggedIn: Boolean(session.currentUser),
-  errors: session.errors
+  errors: session.errors,
+  formType: ownProps.formType
 });
 
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
-  const processForm = (formType === 'login') ? login : signup;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const processForm = (ownProps.formType === 'login') ? login : signup;
 
   return {
     processForm: user => dispatch(processForm(user)),
-    login: user => dispatch(login(user)),
-    formType
+    login: user => dispatch(login(user))
   };
 };
 

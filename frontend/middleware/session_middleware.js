@@ -1,9 +1,11 @@
 // actions
 import { receiveCurrentUser,
          receiveErrors,
+         demo,
          LOGIN,
          LOGOUT,
-         SIGNUP } from '../actions/session_actions';
+         SIGNUP,
+         DEMO} from '../actions/session_actions';
 
 // api utils
 import { login, signup, logout } from '../util/session_api_util';
@@ -22,6 +24,9 @@ export default ({getState, dispatch}) => next => action => {
     case SIGNUP:
       signup(action.user, successCallback, errorCallback);
       return next(action);
+    case DEMO:
+      let user = {user:{username: 'monnorcurphy' , password: 'password'}}
+      login(user, successCallback, errorCallback);
     default:
       return next(action);
   }
