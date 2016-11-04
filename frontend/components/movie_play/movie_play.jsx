@@ -28,7 +28,7 @@ class MoviePlay extends React.Component{
             <p className='genre'> Genre: {this.props.movie.genre} </p>
           </div>
         <div className='movie-playing'>
-            <iframe width="426" height="240" src="https://www.youtube.com/embed/gOW_azQbOjw" frameborder="0" allowFullScreen/>
+            <iframe width="426" height="240" src={this.props.movie.url} frameborder="0" allowFullScreen/>
           </div>
 
         </div>
