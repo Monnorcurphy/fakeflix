@@ -8,7 +8,6 @@ const SessionReducer = (state = {}, action) => {
     case RECEIVE_MOVIES:
       return merge({}, state, action.movies);
     case RECEIVE_MOVIE:
-      debugger
       return merge({}, state, {[action.movie.id]: action.movie})
     case RECEIVE_ERRORS:
       const errors = action.errors;
