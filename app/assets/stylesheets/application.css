@@ -23,6 +23,102 @@ div.login-signup > a{
   padding: 10px;
 }
 
+
+div.hide-these{
+  position: relative;
+  display: flex;
+  float: left;
+  top: 30px;
+  width: 250px;
+  height: 400px;
+  background-color: black;
+  z-index: 20;
+  opacity: .2;
+}
+
+div.movie-play{
+  height: 100%;
+  width: 100%;
+}
+
+div.root{
+  height: 100%;
+  width: 100%;
+}
+
+div.movie-playing{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+}
+
+h2.title{
+  color: white;
+  font-size: 20px;
+  position: fixed;
+  top: 35px;
+  left: 10px;
+  opacity: none;
+}
+
+
+p.year{
+  position: fixed;
+  color: white;
+  top: 60px;
+  left: 10px;
+  opacity: none;
+}
+
+p.description{
+  position: fixed;
+  color: white;
+  top: 90px;
+  left: 10px;
+  width: inherit;
+  opacity: none;
+
+}
+
+p.genre{
+  position: fixed;
+  color: white;
+  top: 150px;
+  left: 10px;
+  width: inherit;
+  opacity: none;
+}
+
+div.movie-playing > iframe{
+  height: 100%;
+  width: 100%;
+}
+
+img.movie-poster:hover {
+    background-color: lightgreen;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+img.movie-poster{
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+span.main-movies{
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 h2.signup-or-login{
   text-align: center;
   color: white;
@@ -120,7 +216,6 @@ header{
 }
 
 div.main-header{
-  border: black solid 2px;
   display: flex;
   background-image: url('http://guyspeed.com/files/2012/02/Groundhog-Day-Poster.jpg');
   background-repeat: no-repeat;

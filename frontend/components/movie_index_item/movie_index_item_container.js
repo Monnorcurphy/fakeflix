@@ -4,8 +4,7 @@ import MovieIndexItem from './movie_index_item';
 
 
 const mapStateToProps = (state, ownProps) => {
-  
-  return ({})
+  return ({ownProps})
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

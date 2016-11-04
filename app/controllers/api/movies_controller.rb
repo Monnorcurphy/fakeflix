@@ -2,7 +2,6 @@ class Api::MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new()
-
     if @movie.save
 			render "api/movie/show"
 		else

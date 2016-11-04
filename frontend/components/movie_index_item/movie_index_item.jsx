@@ -1,15 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
-const MovieIndexItem = (state) => {
-  const requestAMovie =() =>{
-    store.dispatch(fetchAMovie());
+class MovieIndexItem extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
   }
-  return(
-    <h2></h2>
-  )
 
+  handleClick(url){
+    return e => this.props.router.push(url)
+  }
+
+  render(){
+    return(
+      <div>
+        <img className='movie-poster'
+          src={this.props.movie.image_url}
+          onClick={this.handleClick(`/movie/${this.props.movie.id}`)}/>
+      </div>
+    )
+  }
 };
 
-export default MovieIndexItem;
+export default withRouter(MovieIndexItem);

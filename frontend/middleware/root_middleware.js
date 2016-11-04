@@ -1,10 +1,11 @@
 import { applyMiddleware } from 'redux';
+import SessionMiddleware from './session_middleware';
+import MoviesMiddleware from './movies_middleware';
 
-import SessionMiddleware from '../middleware/session_middleware';
-import MoviesMiddleware from '../middleware/movies_middleware';
 
 const RootMiddleware = applyMiddleware(
-    SessionMiddleware, MoviesMiddleware
+  SessionMiddleware, MoviesMiddleware
+
 );
 
 export default RootMiddleware;
