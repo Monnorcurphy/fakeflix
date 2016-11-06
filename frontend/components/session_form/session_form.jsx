@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
 
 	handleDemo(e){
 		e.preventDefault();
-		this.props.login({user:{username: 'monnorcurphy', password: 'password' }})
+		this.props.login({user:{username:'guest', password:'password' }})
 		this.redirectIfLoggedIn()
 	}
 

@@ -10,7 +10,8 @@ class Api::MoviesController < ApplicationController
 	end
 
   def show
-    @movie = Movie.find(params[:id])
+		puts @movie
+		@movie = Movie.find(params[:id])
   end
 
   def index

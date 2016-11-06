@@ -26,7 +26,7 @@ export default ({getState, dispatch}) => next => action => {
       signup(action.user, successCallback, errorCallback);
       return next(action);
     case DEMO:
-      let user = {user:{username: 'monnorcurphy' , password: 'password'}}
+      let user = {user:{username:'guest' , password: 'password'}}
       login(user, successCallback, errorCallback);
     default:
       return next(action);

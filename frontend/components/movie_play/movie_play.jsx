@@ -10,9 +10,7 @@ class MoviePlay extends React.Component{
 
   componentWillMount(){
     if(!this.props.movie){
-      console.log(this.props.fetchMovie(this.props.params.movieId));
       let movie = this.props.fetchMovie(this.props.params.movieId)
-      console.log(this.props);
     }
   }
 

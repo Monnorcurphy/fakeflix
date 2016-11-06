@@ -15,6 +15,7 @@ class Splash extends React.Component{
     super(props);
     this.state = {authModal: false, formType:''};
     this.demo = this.demo.bind(this);
+    
   }
 
   componentWillReceiveProps(nextProps){

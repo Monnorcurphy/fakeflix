@@ -1,4 +1,5 @@
 import { FETCH_MOVIES, receiveMovies, receiveMovie, FETCH_MOVIE, RECEIVE_MOVIE} from '../actions/movie_actions';
+import {receiveErrors} from '../actions/session_actions';
 import { fetchMovies, fetchMovie} from '../util/movie_api_util';
 
 export default  (state) => next => action => {
