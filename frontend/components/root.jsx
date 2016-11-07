@@ -32,16 +32,15 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} >
-          <IndexRoute component={Splash} />
+          <IndexRoute component={Splash} onEnter={_redirectIfLoggedIn} />
         </Route>
-        <Route path="/main" component={MovieIndexContainer}  />
-        <Route path="/movie/:movieId" component={MoviePlayContainer}/>
+        <Route path="/main" component={MovieIndexContainer} onEnter={_ensureLoggedIn} />
+        <Route path="/movie/:movieId" component={MoviePlayContainer} onEnter={_ensureLoggedIn}/>
 
       </Router>
     </Provider>
   );
 };
-// onEnter={_redirectIfLoggedIn}
-// onEnter={_ensureLoggedIn}
+
 
 export default Root;

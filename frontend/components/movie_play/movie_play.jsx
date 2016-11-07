@@ -17,16 +17,23 @@ class MoviePlay extends React.Component{
 
   render(){
     if (this.props.movie){
+      
       return(
         <div className='movie-play'>
-          <div className='hide-these'>
-            <h2 className = 'title'>{this.props.movie.title}</h2>
+          <button className="logout movie-play" onClick={this.props.logout}>Log Out</button>
+          <Link to="/" className="movie-play-header">
+              <h1 className= 'logo'>FAKEFLIX</h1>
+            </Link>
+            <input className='button play movie-play' type='submit' value='Play'/>
+        <div className='hide-these'>
+            <h1 className='title'>{this.props.movie.title}</h1>
             <p className='description'>Description: {this.props.movie.description}</p>
             <p className='year'>Year: {this.props.movie.year}</p>
-            <p className='genre'> Genre: {this.props.movie.genre} </p>
+            <p className='genre'>Genre(s): {this.props.movie.genre}</p>
+            <p className='actors'>Actor(s): {this.props.movie.actors}</p>
           </div>
         <div className='movie-playing'>
-            <iframe width="426" height="240" src={this.props.movie.url} frameborder="0" allowFullScreen/>
+            <img className='movie' src={this.props.movie.image_url}/>
           </div>
 
         </div>

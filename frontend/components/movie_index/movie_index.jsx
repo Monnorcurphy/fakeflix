@@ -9,7 +9,9 @@ class MovieIndex extends React.Component{
     }
 
     componentDidUpdate() {
-      // this.redirectIfLoggedOut();
+      debugger;
+      this.redirectIfLoggedOut();
+
   	}
 
     componentWillMount(){
@@ -29,21 +31,32 @@ class MovieIndex extends React.Component{
       let sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
       if (sample1){
         let movies =[];
+        let comedy =[];
+        let action =[];
+
         for (let key in this.props.movies) {
-            movies.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
-            if (movies.length >= 50){
-              break;
+            if (movies.length < 50){
+              movies.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
+            }
+            if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Comedy'))){
+              comedy.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
+            }
+            if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Action'))){
+              action.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
+            }
           }
-        }
-        console.log(this.props.movies);
+
         return (<div>
           <div className='main-header'>
             <button className="logout" onClick={this.props.logout}>Log Out</button>
               <div className= 'content-holder'>
                 <div className='main-content-splash'>
+                  <Link to="/" className="header-link">
+                    <h1 className= 'logo'>FAKEFLIX</h1>
+                  </Link>
                   <input className='search' type='text'/>
                   <input className='button play' type='submit' value='Play'/>
-                  <h2 className='main-content-splash'>{sample1.title}</h2>
+                  <h1 className='main-content-splash'>{sample1.title}</h1>
                   <p className='main-content-splash'>Description: {sample1.description}</p>
                   <p className='main-content-splash'>Year: {sample1.year}</p>
                   <p className='main-content-splash'>Genre(s): {sample1.genre}</p>
@@ -52,13 +65,22 @@ class MovieIndex extends React.Component{
               </div>
           </div>
           <div className='main-div'>
-            <Carousel slidesToShow={5} cellSpacing={1} dragging={true} dots={false} >
+            <h3 className= 'label IMDB-50'>IMDB Top 50</h3>
+            <Carousel className= 'carousel IMDB-50' slidesToShow={6} dragging={true} >
               {movies}
+            </Carousel>
+            <h3 className= 'label'>Action</h3>
+            <Carousel className= 'carousel' slidesToShow={6} dragging={true} >
+              {action}
+            </Carousel>
+            <h3 className= 'label'>Comedies</h3>
+            <Carousel className= 'carousel' slidesToShow={6} dragging={true} >
+              {comedy}
             </Carousel>
           </div>
 
         </div>)
-      } else {
+      }else {
         return (<div>LOADING!</div>)
       }
 
