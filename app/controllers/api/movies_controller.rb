@@ -10,12 +10,16 @@ class Api::MoviesController < ApplicationController
 	end
 
   def show
-		puts @movie
 		@movie = Movie.find(params[:id])
+
   end
 
+	def search
+		Movie.where("name LIKE ? OR actors LIKE ?", params[:query], params[:query])
+	end
+
   def index
-    @movies = Movie.all
+    @movies = Movie.order(:id).all
   end
 
   private

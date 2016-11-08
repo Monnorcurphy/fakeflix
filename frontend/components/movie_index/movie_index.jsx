@@ -6,23 +6,28 @@ var Carousel = require('nuka-carousel');
 class MovieIndex extends React.Component{
     constructor(props){
       super(props);
+      this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidUpdate() {
-      debugger;
       this.redirectIfLoggedOut();
-
   	}
 
     componentWillMount(){
+
       this.props.fetchMovies();
     }
 
     redirectIfLoggedOut() {
-  		if (!this.props.loggedIn){
+
+      if (!this.props.loggedIn){
         this.props.router.replace("/");
       }
   	}
+
+    handleClick(url){
+      return e => this.props.router.push(url)
+    }
 
     search(){}
 
@@ -35,28 +40,34 @@ class MovieIndex extends React.Component{
         let action =[];
 
         for (let key in this.props.movies) {
-            if (movies.length < 50){
-              movies.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
-            }
-            if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Comedy'))){
-              comedy.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
-            }
-            if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Action'))){
-              action.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
-            }
+
+          if(key === 'errors'){
+            continue
+          }
+          if (movies.length < 50){
+
+            movies.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
           }
 
+          if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Comedy'))){
+
+            comedy.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
+          }
+          if((this.props.movies[key].genre) && (this.props.movies[key].genre.includes('Action'))){
+            action.push(<MovieIndexItem key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
+          }
+        }
+      
         return (<div>
           <div className='main-header'>
             <button className="logout" onClick={this.props.logout}>Log Out</button>
+            <input className='search' type='text'/>
               <div className= 'content-holder'>
                 <div className='main-content-splash'>
                   <Link to="/" className="header-link">
                     <h1 className= 'logo'>FAKEFLIX</h1>
                   </Link>
-                  <input className='search' type='text'/>
-                  <input className='button play' type='submit' value='Play'/>
-                  <h1 className='main-content-splash'>{sample1.title}</h1>
+                  <h1 className='main-content-splash' onClick={this.handleClick(`/movie/${sample1.id}`)}>{sample1.title}</h1>
                   <p className='main-content-splash'>Description: {sample1.description}</p>
                   <p className='main-content-splash'>Year: {sample1.year}</p>
                   <p className='main-content-splash'>Genre(s): {sample1.genre}</p>

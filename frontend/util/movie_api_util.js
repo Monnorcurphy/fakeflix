@@ -16,3 +16,12 @@ export const fetchMovie = (id, success, error) => {
     error
   });
 }
+
+export const searchMovies = (id, success, error) => {
+	$.ajax({
+		type: 'get',
+		url: `api/movies/${id}`,
+		success,
+		error
+	})
+}

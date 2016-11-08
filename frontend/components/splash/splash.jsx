@@ -15,7 +15,7 @@ class Splash extends React.Component{
     super(props);
     this.state = {authModal: false, formType:''};
     this.demo = this.demo.bind(this);
-    
+
   }
 
   componentWillReceiveProps(nextProps){
@@ -25,6 +25,7 @@ class Splash extends React.Component{
  }
 
  componentDidUpdate() {
+  
    this.redirectIfLoggedIn();
  }
 
@@ -34,9 +35,6 @@ class Splash extends React.Component{
    }
  }
 
- handleButtonIfLoggedIn(){
-  this.props.router.push('/app');
-  }
 
   openModal(type){
     this.props;

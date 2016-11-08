@@ -28,6 +28,26 @@ div.movie-play{
   width: 100%;
 }
 
+div.movie-playing{
+  position: fixed;
+  display: flex;
+  top: 10%;
+  z-index: -1;
+  float: right;
+  border: none;
+  height: 99%;
+  width: 94%;
+  right: 1%;
+  padding: 2px;
+}
+
+iframe.movie-player{
+  width: 100%;
+  height:90%;
+  border: none;
+  background-color: #1A1A1A;
+}
+
 p{
   font-family: arial, sans-serif;
 }
@@ -41,16 +61,6 @@ h1, h2, h3, h4, h5, h6{
 div.root{
   height: 100%;
   width: 100%;
-}
-
-div.movie-playing{
-  position: fixed;
-  display: flex;
-  width: 50%;
-  height: 100%;
-  z-index: -1;
-  float: right;
-
 }
 
 div.slider-decorator-2{
@@ -86,24 +96,25 @@ a.movie-play-header{
   z-index: 1
 }
 
+div.hide-these:hover{
+  opacity: .85;
+
+}
+
+
 div.hide-these{
   justify-content: space-between;
   display: inline-block;
   position: absolute;
   width: 50%;
   font-size: 150%;
-
   padding: 8px;
-  opacity: 0.85;
+  opacity: 0.0;
   height: 100%;
   bottom: 0%;
-  background: #1A1A1A; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #1A1A1A , #141414); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #1A1A1A, #141414); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #1A1A1A, #141414); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #1A1A1A , #141414); /* Standard syntax */
-}
+  background: #1A1A1A;
 
+}
 
 h1.title{
   top: 11%;
@@ -143,13 +154,8 @@ p.actors{
   font-size: 85%;
 }
 
-div.movie-playing > iframe{
-  height: 100%;
-  width: 100%;
-}
-
 img.movie-poster:hover {
-    background-color: red;
+    border-bottom: red 2px solid;
 
 }
 
@@ -188,7 +194,7 @@ header.logo{
 a.header-link{
   text-decoration: none;
   color: red;
-  top: -28%;
+  top: -7%;
   position: absolute;
   font-size: 30px;
   left: -5%;
@@ -322,8 +328,8 @@ input.search{
   min-width: 150px;
   display: inline-block;
   position: absolute;
-  left: 50%;
-  top: -30%;
+  left: 44%;
+  top: 2%;
   margin: 11px;
 }
 
@@ -373,15 +379,18 @@ div.main-content-splash{
   justify-content: space-between;
   display: inline-block;
   position: absolute;
-  bottom: 30%;
+  bottom: 32%;
   width: 50%;
-  height: 50%;
+  height: 58%;
   font-size: 150%;
   margin: 10px;
   padding: 8px;
   background-color: inherit;
-  top: 16%;
   left: 5%;
+  opacity: .8;
+  z-index: 2;
+
+  background: linear-gradient(to right, #1A1A1A, 80% wrgba(0,0,0,0))
 }
 
 
@@ -391,20 +400,28 @@ div.main-content-splash > h1{
 
 
 h1.main-content-splash{
+  text-decoration: none;
   color: white;
-  display: flex;
-  width: 80%;
-  font-size: 110%;
-  top: -10%;
+  top: 0%;
   position: absolute;
+  font-size: 30px;
+  left: 4%;
+}
+
+h1.main-content-splash:hover{
+  font-weight: bolder;
+  color: red;
+  font-size: 140%;
+  cursor: pointer;
 }
 
 p.main-content-splash{
   color: white;
   width: 90%;
-  height: 3%;
+  height: 1%;
   font-size: 91%;
   display: inline-block;
+  padding-top: 39px;
 }
 img.main-content-splash{
   display: inline-block;
