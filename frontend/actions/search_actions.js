@@ -1,6 +1,6 @@
 export const SEARCH = "SEARCH";
 
-export const searchMovies = movies => ({
+export const recieveSearch = filter => ({
   type: SEARCH,
-  movies
+  filter
 });

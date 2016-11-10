@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ /*@import 'whatever';*/
+ @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 div.login-signup > a{
   font-size: 14px;
@@ -28,15 +30,49 @@ div.movie-play{
   width: 100%;
 }
 
+img.movie-searched-poster{
+  max-width: 300px;
+  max-height: 300px;
+  min-height: 200px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+img.movie-searched-poster:hover{
+  border: red 1px solid;
+}
+
+div.search-list{
+  display: flex;
+  float: right;
+}
+
+button.search{
+  left: 100%;
+  display: flex;
+  position: relative;
+}
+
+#logo-search{
+  top: 1%;
+  left: 2%;
+}
+
+
+
 div.movie-playing{
   position: fixed;
   display: flex;
-  top: 10%;
+  top: 7%;
   z-index: -1;
   float: right;
   border: none;
-  height: 99%;
-  width: 94%;
+  height: 102%;
+  width: 98%;
   right: 1%;
   padding: 2px;
 }
@@ -76,8 +112,6 @@ img.movie{
 
 }
 
-
-
 h2.title{
   color: white;
   font-size: 20px;
@@ -106,67 +140,72 @@ div.hide-these{
   justify-content: space-between;
   display: inline-block;
   position: absolute;
-  width: 50%;
+  width: 35%;
   font-size: 150%;
   padding: 8px;
   opacity: 0.0;
-  height: 100%;
-  bottom: 0%;
+  height: 60%;
+  top: 15%;
   background: #1A1A1A;
 
 }
 
 h1.title{
-  top: 11%;
+  top: 5%;
   color: white;
-  font-size: 110%;
-  padding: 7px;  position: absolute;
+  font-size: 90%;
+  padding: 7px;
+  position: absolute;
 }
 
 
 p.description{
   position: absolute;
   padding: 7px;
-  top: 20%;
+  top: 12%;
   color: white;
-  font-size: 90%
+  font-size: 70%;
+  margin: 3px;
 }
 
 p.year{
   color: white;
   position: absolute;
   padding: 7px;
-  top: 50%;
-  font-size: 85%;
+  top: 47%;
+  font-size: 70%;
 }
 p.genre{
   color: white;
   position: absolute;
   padding: 7px;
-  top: 60%;
-  font-size: 85%;
+  top: 59%;
+  font-size: 70%;
 }
 p.actors{
   color: white;
   position: absolute;
   padding: 7px;
-  top: 75%;
-  font-size: 85%;
+  top: 70%;
+  font-size: 70%;
 }
 
 img.movie-poster:hover {
-    border-bottom: red 2px solid;
-
+    border-left: red 2px solid;
+    cursor: pointer;
 }
 
 img.movie-poster{
-  max-width: 100px;
-  max-height: 150px;
+  max-width: 75px;
+  max-height: 125px;
   width: auto;
   height: auto;
+  min-width: 60%;
+  min-height: 70%;
   padding: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  z-index: 100;
 
 }
 
@@ -191,6 +230,14 @@ header.logo{
   position: absolute;
 
 }
+
+nav > p{
+  color: white;
+  position: fixed;
+  top: 0%;
+  right: 54%;
+  font-size: 112%;
+}
 a.header-link{
   text-decoration: none;
   color: red;
@@ -209,7 +256,9 @@ h1.logo{
 
 button.movie-play{
   position: absolute;
-  right: 6%;
+  right: 2%;
+  top: 0%;
+  cursor: pointer;
 }
 h2.header-name{
   display: flex;
@@ -223,6 +272,9 @@ img.splash-image{
 div.login-signup{
   display: flex;
   float: right;
+  position: fixed;
+  right: 3%;
+  top: 3%;
   width: 50%;
   justify-content: flex-end;
 }
@@ -244,10 +296,11 @@ div.splash-div{
   min-width: 200px;
   min-height: 700px;
   max-height: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("https://media.giphy.com/media/kyNZGsYkvweqc/giphy.gif");
+}
+
+iframe.splash-player{
+  width: 100%;
+  height: 700px;
 }
 
 input.button {
@@ -257,10 +310,11 @@ input.button {
   color: white;
   background-color: red;
   border: none;
-  padding: 10px;
+  padding: 7px;
   margin: 5px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 15px;
+  cursor: pointer;
 }
 button {
   font: Sans-serif;
@@ -273,6 +327,7 @@ button {
   margin: 5px;
   margin-top: 10px;
   margin-right: 15px;
+  cursor: pointer;
 }
 
 button.splash-demo{
@@ -283,6 +338,7 @@ button.splash-demo{
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  cursor: pointer;
 
 }
 header{
@@ -293,13 +349,15 @@ div.main-header{
   display: flex;
   min-height: 300px;
   justify-content: space-around;
-  background-color: black;
+  background-color: #1A1A1A;
+  position: absolute;
+  width: 100%;
 }
 
 img.display-film{
   display: flex;
   min-width: 40%;
-  min-height: 100%''
+  min-height: 100%;
 }
 img.display-film:first-child{
   float: left;
@@ -315,6 +373,7 @@ div.main-header > button{
   display: flex;
   right: 10px;
   top: 10px;
+  cursor: pointer;
 }
 div.main-header > input.button{
   max-height: 30px;
@@ -322,6 +381,7 @@ div.main-header > input.button{
   display: flex;
   left: 10px;
   top: 200px;
+  cursor: pointer;
 }
 input.search{
   max-height: 30px;
@@ -329,8 +389,9 @@ input.search{
   display: inline-block;
   position: absolute;
   left: 44%;
-  top: 2%;
+  top: 12%;
   margin: 11px;
+  z-index: 3;
 }
 
 body{
@@ -365,23 +426,46 @@ h3.label{
   padding-left: 6px;
 }
 
-h1.splash-demo{
-
-}
-
 h3.IMDB-50{
   background-color: #1A1A1A;
 }
 
+input#unique{
+  left: 90%;
+  top: 100%;
+  z-index: 15;
+  position: relative;
+}
 
+nav{
+  display: flex;
+  z-index: 13;
+  width: 100%;
+  height: 10%;
+  opacity: .93;
+  position: fixed;
+  top: 0%;
+  background: #1A1A1A;
+}
+
+nav >button.header-bar{
+  position: fixed;
+  right: 4%;
+}
+h1.logo{
+  color: red;
+  display: flex;
+  top: 2%;
+  position: fixed;
+}
 
 div.main-content-splash{
   justify-content: space-between;
   display: inline-block;
   position: absolute;
-  bottom: 32%;
+  bottom: 22%;
   width: 50%;
-  height: 58%;
+  height: 66%;
   font-size: 150%;
   margin: 10px;
   padding: 8px;
@@ -389,8 +473,19 @@ div.main-content-splash{
   left: 5%;
   opacity: .8;
   z-index: 2;
+  background: linear-gradient(to right, #1A1A1A, 80% rgba(0,0,0,0));
+}
 
-  background: linear-gradient(to right, #1A1A1A, 80% wrgba(0,0,0,0))
+
+h3.IMDB-50{
+  position: relative;
+  top: 7%;
+  z-index: 3;
+}
+div.search-results{
+  width: 90%;
+  height: 100%;
+  margin-left: 15%;
 }
 
 
@@ -398,22 +493,16 @@ div.main-content-splash > h1{
   text-align: center;
 }
 
-
 h1.main-content-splash{
   text-decoration: none;
   color: white;
   top: 0%;
   position: absolute;
-  font-size: 30px;
+  font-size: 150%;
   left: 4%;
+  padding: 8px;
 }
 
-h1.main-content-splash:hover{
-  font-weight: bolder;
-  color: red;
-  font-size: 140%;
-  cursor: pointer;
-}
 
 p.main-content-splash{
   color: white;
@@ -421,8 +510,9 @@ p.main-content-splash{
   height: 1%;
   font-size: 91%;
   display: inline-block;
-  padding-top: 39px;
+  padding-top: 20px;
 }
+
 img.main-content-splash{
   display: inline-block;
   margin: 10px;
@@ -436,12 +526,15 @@ img.main-content-splash{
   position: absolute;
   right: 8%;
 }
-xw
+
 
 div.main-div{
   position: absolute;
-  bottom: 1%;
+    bottom: -32%;
+    width: 100%;
+    height: 50%
 }
+
 div.main-div:first-child{
   background-color: #1A1A1A;
   background-image:
@@ -464,13 +557,23 @@ div.slider{
   bottom: 1%;
   background-color: #141414;
   padding: 15px;
+  min-height: 150px;
 
+}
+
+p.main-description{
+  padding-top: 40px;
 }
 
 div.content-holder{
   width: 100%;
-  height: 550px;
+  min-height: 650px;
   background-color: #1A1A1A
+}
+
+#splash-poster:hover{
+  border-bottom: red 2px solid;
+  cursor: pointer;
 }
 
 span.main-movies{
@@ -485,4 +588,51 @@ span.main-movies > img{
   justify-content: space-around;
   max-width: 100px;
   max-height: 200px;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  width: 115px;
+  left: 0%;
+  position: absolute;
+  bottom: 5%;
+
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 3px;
+  font-size: 70%;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  text-shadow: 1px 1px black;
+}
+
+.rating > label {
+  color: white;
+ float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #E00609;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #E00609;  }
+
+div.login-signup{
+position: fixed;
+top: 2%;
+right: 13%;
 }

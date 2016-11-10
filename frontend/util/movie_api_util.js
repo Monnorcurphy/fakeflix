@@ -17,10 +17,11 @@ export const fetchMovie = (id, success, error) => {
   });
 }
 
-export const searchMovies = (id, success, error) => {
+export const movieRating = (movie, success, error) =>{
 	$.ajax({
-		type: 'get',
-		url: `api/movies/${id}`,
+		type: 'patch',
+		url:`api/movies/${movie.id}`,
+		data: {rating: movie.rating, id: movie.id},
 		success,
 		error
 	})

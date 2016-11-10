@@ -11,15 +11,18 @@ class Api::MoviesController < ApplicationController
 
   def show
 		@movie = Movie.find(params[:id])
-
   end
 
-	def search
-		Movie.where("name LIKE ? OR actors LIKE ?", params[:query], params[:query])
+
+	def update
+	
+		@movie = Movie.find(params[:id])
+		@movie.avg_rating = params['rating'].to_i
+		@movie.save
 	end
 
   def index
-    @movies = Movie.order(:id).all
+    @movies = Movie.all
   end
 
   private

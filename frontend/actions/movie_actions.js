@@ -2,7 +2,8 @@ export const FETCH_MOVIES = "FETCH_MOVIES";
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const FETCH_MOVIE = 'FETCH_MOVIE'
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
-export const FETCH_PLAY = 'FETCH_PLAY'
+export const FETCH_PLAY = 'FETCH_PLAY';
+export const RATE_MOVIE = 'RATE_MOVIE';
 
 
 export const fetchMovies = () =>({
@@ -27,4 +28,9 @@ export const receiveMovie = movie => ({
 export const fetchPlay = movie => ({
   type: FETCH_PLAY,
   movie
+})
+
+export const rateMovie = (id, rating) => ({
+  type: RATE_MOVIE,
+  id
 })

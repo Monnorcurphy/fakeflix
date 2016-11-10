@@ -15,6 +15,7 @@ class Splash extends React.Component{
     super(props);
     this.state = {authModal: false, formType:''};
     this.demo = this.demo.bind(this);
+    this.state.movie = {}
 
   }
 
@@ -24,10 +25,17 @@ class Splash extends React.Component{
    }
  }
 
- componentDidUpdate() {
-  
-   this.redirectIfLoggedIn();
+ componentWillMount(){
+   let random = (Math.floor(Math.random() *50) + 1);
+   this.props.fetchMovie(random)
  }
+
+ componentDidUpdate() {
+   this.redirectIfLoggedIn();
+
+ }
+
+
 
  redirectIfLoggedIn() {
    if (this.props.loggedIn){
@@ -58,14 +66,21 @@ class Splash extends React.Component{
   }
 
   render () {
+
+    if(this.props.movie){
     return (<div className='splash-div'>
+    <Link to="/" className="header-bar">
+        <h1 className= 'logo'>FAKEFLIX</h1>
+    </Link>
+    <iframe className='splash-player' id='splash-player'src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&&modestbranding=1&loop=1&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
+
       <div className='login-signup'>
         <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
         <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
       </div>
         <div className ='over-demo'>
-          <h2>Tons of Movies</h2>
-          <p>Simple interface, logical design.</p>
+          <h2>Tons of Trailers</h2>
+          <p>Only a few clicks away.</p>
         </div>
       <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
         <Modal isOpen={this.state.authModal}
@@ -77,8 +92,12 @@ class Splash extends React.Component{
             toggleForm={this.toggleForm.bind(this)}
           />
         </Modal>
+
   </div>)
-  }
+}else{
+
+  return(<div>NO!</div>)
+}}
 }
 
 Splash.contextTypes = {

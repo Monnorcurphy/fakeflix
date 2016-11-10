@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import {fetchMovie, fetchPlay} from '../../actions/movie_actions';
+import {fetchMovie} from '../../actions/movie_actions';
+import { logout } from '../../actions/session_actions';
 import MoviePlay from './movie_play';
+import {rateMovie} from '../../actions/movie_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  return ({movie: state.movies[ownProps.params.movieId]})
+  return ({loggedIn: Boolean(state.session.currentUser),
+    movie: state.movies[ownProps.params.movieId]})
 };
 
 const mapDispatchToProps = (dispatch) => (
-  {fetchMovie: id => dispatch(fetchMovie(id)),
-  fetchPlay: movie => dispatch(fetchPlay(movie))}
+  {logout: () => dispatch(logout()),
+  fetchMovie: id => dispatch(fetchMovie(id)),
+  rateMovie: (id, rating) => dispatch(rateMovie(id, rating))}
 );
 
 export default connect(

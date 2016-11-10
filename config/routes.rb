@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :ratings, only: [:create]
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
-    resources :movies, only: [:create, :show, :index]
+    resources :movies, only: [:create, :show, :index, :update]
   end
 
   root "static_pages#root"

@@ -1,12 +1,12 @@
-import {RECEIVE_MOVIES} from '../actions/movie_actions';
+import {SEARCH} from '../actions/search_actions';
 import merge from 'lodash/merge';
 
 
-const SearchReducer = (state = {}, action) => {
+const SearchReducer = (state = '', action) => {
 
   switch(action.type) {
-    case RECEIVE_MOVIES:
-      return merge({}, state, action.movies);
+    case SEARCH:
+      return action.filter;
     default:
       return state;
   }

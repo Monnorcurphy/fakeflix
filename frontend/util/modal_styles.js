@@ -18,6 +18,6 @@ export const authModalStyle = {
    padding         : 0,
    margin          : '0 auto',
    zIndex          : 51,
-   backgroundColor : 'black'
+   backgroundColor : '#141414'
  }
 };
