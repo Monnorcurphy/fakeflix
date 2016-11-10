@@ -40,7 +40,7 @@ class SearchList extends React.Component{
       return(
         <div>
             <div className = 'search-results'>
-            <button className="logout search" onClick={this.props.logout}>Log Out</button>
+        
               <Masonry className='searched-movies' elementType={'ul'} options={{fitWidth: true, columnWidth: 100 }}>
                 {searched}
               </Masonry>

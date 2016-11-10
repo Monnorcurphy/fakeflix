@@ -32,7 +32,7 @@ class MovieIndex extends React.Component{
           that.forceUpdate()
       });
 
-      console.log('HEYO IM MR MESEEKS LOOK AT ME');
+
     }
 
     redirectIfLoggedOut() {
@@ -134,7 +134,10 @@ class MovieIndex extends React.Component{
           </div>
           )
       }else {
-        return (<div>LOADING!</div>)
+        return (<div className='loading'><div id="loader">
+          <div id="box"></div>
+          <div id="hill"></div>
+      </div></div>)
       }
 
 

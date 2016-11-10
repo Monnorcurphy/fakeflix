@@ -8,6 +8,7 @@ class MoviePlay extends React.Component{
     super(props);
     this.rateMovie = this.rateMovie.bind(this);
     this.rateMovie = this.rateMovie.bind(this);
+    this.state={rating: false}
   }
 
   componentDidMount(){
@@ -35,7 +36,7 @@ class MoviePlay extends React.Component{
 
 
   render(){
-    console.log(this.props);
+
     if (this.props.movie && this.state.rating === 0){
 
       return(
@@ -70,8 +71,7 @@ class MoviePlay extends React.Component{
       )
     }
     else if(this.props.movie) {
-      console.log('you are here!');
-      console.log(this.props.movie);
+
       return(
         <div className='movie-play'>
           <button className="logout movie-play" onClick={this.props.logout}>Log Out</button>
@@ -102,8 +102,10 @@ class MoviePlay extends React.Component{
     }
 
     else{
-      return(
-        <h2>LOADING!!!!!</h2>
+      return(<div className='loading'><div id="loader">
+        <div id="box"></div>
+        <div id="hill"></div>
+    </div></div>
       )
     }
 

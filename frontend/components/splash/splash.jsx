@@ -25,17 +25,10 @@ class Splash extends React.Component{
    }
  }
 
- componentWillMount(){
-   let random = (Math.floor(Math.random() *50) + 1);
-   this.props.fetchMovie(random)
- }
-
  componentDidUpdate() {
    this.redirectIfLoggedIn();
 
  }
-
-
 
  redirectIfLoggedIn() {
    if (this.props.loggedIn){
@@ -66,13 +59,11 @@ class Splash extends React.Component{
   }
 
   render () {
-
-    if(this.props.movie){
+    {
     return (<div className='splash-div'>
     <Link to="/" className="header-bar">
         <h1 className= 'logo'>FAKEFLIX</h1>
     </Link>
-    <iframe className='splash-player' id='splash-player'src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&&modestbranding=1&loop=1&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
 
       <div className='login-signup'>
         <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
@@ -94,9 +85,6 @@ class Splash extends React.Component{
         </Modal>
 
   </div>)
-}else{
-
-  return(<div>NO!</div>)
 }}
 }
 
