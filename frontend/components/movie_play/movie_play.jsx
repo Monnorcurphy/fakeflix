@@ -37,7 +37,7 @@ class MoviePlay extends React.Component{
 
   render(){
 
-    if (this.props.movie && this.state.rating === 0){
+    if (this.props.movie && this.props.movie.avg_rating === 0){
 
       return(
         <div className='movie-play'>

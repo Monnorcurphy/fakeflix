@@ -115,19 +115,19 @@ class MovieIndex extends React.Component{
           </div>
           <div className='main-div'>
             <h3 className= 'label IMDB-50'>IMDB Top 50</h3>
-            <Carousel className= 'carousel IMDB-50' slidesToShow={5} slidesToScroll={2} dragging={true} slideWidth={0.75} initialSlideHeight ={200}>
+            <Carousel className= 'carousel IMDB-50' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} initialSlideHeight ={200}>
               {movies}
             </Carousel>
             <h3 className= 'label'>Action</h3>
-            <Carousel className= 'carousel' slidesToShow={5} slidesToScroll={2} dragging={true} slideWidth={0.75}>
+            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75}>
               {action}
             </Carousel>
             <h3 className= 'label'>Comedies</h3>
-            <Carousel className= 'carousel' slidesToShow={5} slidesToScroll={2} dragging={true} slideWidth={0.75} >
+            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
               {comedy}
             </Carousel>
             <h3 className= 'label'>Sci-Fi and Fantasy</h3>
-            <Carousel className= 'carousel' slidesToShow={5} slidesToScroll={2} dragging={true} slideWidth={0.75} >
+            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
               {sciFi}
             </Carousel>
           </div>
