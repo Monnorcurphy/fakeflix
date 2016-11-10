@@ -236,7 +236,7 @@ nav > p{
   color: white;
   position: fixed;
   top: 0%;
-  right: 54%;
+  right: 58%;
   font-size: 112%;
 }
 a.header-link{
@@ -599,6 +599,24 @@ span.main-movies > img{
   max-width: 100px;
   max-height: 200px;
 }
+
+h1.splash{
+  margin: 5px;
+}
+
+button.login{
+  position: fixed;
+  top: 1%;
+  right: 18%;
+}
+
+button.signup{
+  position: fixed;
+  top: 1%;
+  right: 3%;
+}
+
+
 
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 1px; }

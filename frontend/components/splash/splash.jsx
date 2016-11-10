@@ -61,18 +61,20 @@ class Splash extends React.Component{
   render () {
     {
     return (<div className='splash-div'>
-    <Link to="/" className="header-bar">
-        <h1 className= 'logo'>FAKEFLIX</h1>
-    </Link>
+    <nav>
+      <Link to="/" className="header-bar">
+          <h1 className= 'splash logo'>FAKEFLIX</h1>
+      </Link>
 
       <div className='login-signup'>
-        <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
-        <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+        <button className= 'login' onClick={this.openModal.bind(this, 'login')}>Login!</button>
+        <button className= 'signup' onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
       </div>
         <div className ='over-demo'>
           <h2>Tons of Trailers</h2>
           <p>Only a few clicks away.</p>
         </div>
+
       <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
@@ -83,6 +85,8 @@ class Splash extends React.Component{
             toggleForm={this.toggleForm.bind(this)}
           />
         </Modal>
+
+    </nav>
 
   </div>)
 }}
