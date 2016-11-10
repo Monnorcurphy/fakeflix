@@ -606,14 +606,14 @@ h1.splash{
 
 button.login{
   position: fixed;
-  top: 1%;
+  top: 0%;
   right: 11%;
 
 }
 
 button.signup{
   position: fixed;
-  top: 1%;
+  top: 0%;
   right: 1%;
 
 }
