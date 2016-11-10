@@ -465,8 +465,9 @@ nav >button.header-bar{
 h1.logo{
   color: red;
   display: flex;
-  top: 2%;
+  top: 0%;
   position: fixed;
+  font-size: 36px;
 }
 
 div.main-content-splash{
