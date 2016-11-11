@@ -63,7 +63,7 @@ class MoviePlay extends React.Component{
   </fieldset>
           </div>
         <div className='movie-playing'>
-          <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
+          <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
 
           </div>
           <nav className= 'footer'>
@@ -104,7 +104,7 @@ class MoviePlay extends React.Component{
   </fieldset>
           </div>
         <div className='movie-playing'>
-          <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
+          <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
 
           </div>
           <nav className= 'footer'>
