@@ -18,6 +18,7 @@ export const fetchMovie = (id, success, error) => {
 }
 
 export const movieRating = (movie, success, error) =>{
+
 	$.ajax({
 		type: 'patch',
 		url:`api/movies/${movie.id}`,

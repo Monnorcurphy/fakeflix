@@ -32,5 +32,6 @@ export const fetchPlay = movie => ({
 
 export const rateMovie = (id, rating) => ({
   type: RATE_MOVIE,
-  id
+  id,
+  rating
 })

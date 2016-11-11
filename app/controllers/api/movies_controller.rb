@@ -1,13 +1,5 @@
 class Api::MoviesController < ApplicationController
 
-	def create
-		@movie = Movie.new()
-    if @movie.save
-			render "api/movie/show"
-		else
-			render json: @movie.errors.full_messages, status: 422
-		end
-	end
 
   def show
 		@movie = Movie.find(params[:id])
@@ -15,10 +7,11 @@ class Api::MoviesController < ApplicationController
 
 
 	def update
-	
+
 		@movie = Movie.find(params[:id])
 		@movie.avg_rating = params['rating'].to_i
 		@movie.save
+		render 'api/movies/show'
 	end
 
   def index

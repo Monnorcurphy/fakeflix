@@ -29,7 +29,7 @@ class MoviePlay extends React.Component{
   }
 
   rateMovie(value){
-    this.props.rateMovie(value, this.props.movie.id)
+    this.props.rateMovie(this.props.movie.id, value)
     this.props.movie.avg_rating = value;
     this.setState({rating: true})
   }

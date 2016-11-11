@@ -12,6 +12,7 @@ class MovieIndex extends React.Component{
       this.handleClick = this.handleClick.bind(this);
       this.search = this.search.bind(this);
       this.state = {filter: '', images: false}
+      this.sample1 = false
       this.setState = this.setState.bind(this);
     }
 
@@ -28,12 +29,13 @@ class MovieIndex extends React.Component{
     componentDidMount(){
       let that = this;
       sync(function* (){
-          yield sleep(1000);
-          that.forceUpdate()
+
+        yield sleep(2500);
+        that.forceUpdate()
       });
-
-
     }
+
+
 
     redirectIfLoggedOut() {
       if (!this.props.loggedIn){
@@ -52,8 +54,10 @@ class MovieIndex extends React.Component{
     }
 
     render () {
+      if (!this.sample1){
+        this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
+      }
 
-      let sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
       if (this.state.filter != ''){
         return(
           <div>
@@ -65,7 +69,7 @@ class MovieIndex extends React.Component{
         <SearchPage movies={this.props.movies} search={this.state.filter}/>
           </div>
       )}
-      if (sample1){
+      if (this.sample1){
 
         let movies =[];
         let comedy =[];
@@ -100,17 +104,17 @@ class MovieIndex extends React.Component{
                 <div className='main-content-splash'>
                 <input className='button header-bar' id='unique'
                   type='submit'
-                  onClick={this.handleClick(`/movie/${sample1.id}`)}
+                  onClick={this.handleClick(`/movie/${this.sample1.id}`)}
                   value='Go to movie'/>
-                  <h1 className='main-content-splash'>{sample1.title}</h1>
-                  <p className='main-content-splash main-description'>Description: {sample1.description}</p>
-                  <p className='main-content-splash'>Year: {sample1.year}</p>
-                  <p className='main-content-splash'>Genre(s): {sample1.genre}</p>
-                  <p className='main-content-splash'>Actor(s): {sample1.actors}</p>
+                <h1 className='main-content-splash'>{this.sample1.title}</h1>
+                  <p className='main-content-splash main-description'>Description: {this.sample1.description}</p>
+                  <p className='main-content-splash'>Year: {this.sample1.year}</p>
+                  <p className='main-content-splash'>Genre(s): {this.sample1.genre}</p>
+                  <p className='main-content-splash'>Actor(s): {this.sample1.actors}</p>
 
 
                 </div>
-                <img className='main-content-splash' id='splash-poster' src={sample1.image_url} onClick={this.handleClick(`/movie/${sample1.id}`)}/>
+                <img className='main-content-splash' id='splash-poster' src={this.sample1.image_url} onClick={this.handleClick(`/movie/${this.sample1.id}`)}/>
               </div>
           </div>
           <div className='main-div'>
@@ -134,6 +138,7 @@ class MovieIndex extends React.Component{
           </div>
           )
       }else {
+
         return (<div className='loading'><div id="loader">
           <div id="box"></div>
           <div id="hill"></div>
