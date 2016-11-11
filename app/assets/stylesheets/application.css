@@ -568,7 +568,7 @@ h1.main-content-splash{
   color: white;
   top: 0%;
   position: absolute;
-  font-size: 250%;
+  font-size: 180%;
   left: 4%;
   padding: 8px;
 }
@@ -578,7 +578,7 @@ p.main-content-splash{
   color: white;
   width: 90%;
   height: 1%;
-  font-size: 140%;
+  font-size: 100%;
   display: inline-block;
   padding-top: 20px;
 }

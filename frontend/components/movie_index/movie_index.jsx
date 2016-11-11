@@ -66,7 +66,7 @@ class MovieIndex extends React.Component{
         return(
           <div>
             <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p className='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} />
+            <p className='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
@@ -108,7 +108,7 @@ class MovieIndex extends React.Component{
         return (<div className='index-page'>
           <div className='main-header'>
             <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p className ='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} />
+            <p className ='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} autoFocus/>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
