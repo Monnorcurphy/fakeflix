@@ -61,7 +61,7 @@ class Splash extends React.Component{
   render () {
     {
     return (<div className='splash-div'>
-    <nav>
+    <nav className='header'>
       <Link to="/" className="header-bar">
           <h1 className= 'splash logo'>FAKEFLIX</h1>
       </Link>
@@ -73,7 +73,8 @@ class Splash extends React.Component{
         <div className ='over-demo'>
           <h2>Tons of Trailers</h2>
           <p>Only a few clicks away.</p>
-        </div>
+
+    </div>
 
       <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
         <Modal isOpen={this.state.authModal}
@@ -88,6 +89,16 @@ class Splash extends React.Component{
 
     </nav>
 
+    
+        <nav className= 'footer'>
+          <p>© 2016 Fakeflix. All rights reserved.</p>
+        <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+              <p className= 'logo'>Linkedin</p>
+          </a>
+          <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+              <p className= 'logo'>Github</p>
+            </a>
+          </nav>
   </div>)
 }}
 }

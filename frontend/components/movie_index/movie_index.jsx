@@ -65,13 +65,22 @@ class MovieIndex extends React.Component{
       if (this.state.filter != ''){
         return(
           <div>
-            <nav><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p>Search:</p><input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} />
+            <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
+            <p className='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} />
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
         <SearchPage movies={this.props.movies} search={this.state.filter}/>
-          </div>
+          <nav className= 'footer'>
+            <p>© 2016 Fakeflix. All rights reserved.</p>
+          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+                <p className= 'logo'>Linkedin</p>
+            </a>
+            <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+                <p className= 'logo'>Github</p>
+              </a>
+                </nav>
+        </div>
       )}
       if (this.sample1){
 
@@ -96,10 +105,10 @@ class MovieIndex extends React.Component{
           }
         }
 
-        return (<div>
+        return (<div className='index-page'>
           <div className='main-header'>
-            <nav><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p>Search:</p><input className='search header-bar' type='text' onChange={this.search} />
+            <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
+            <p className ='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} />
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
@@ -138,10 +147,21 @@ class MovieIndex extends React.Component{
             <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
               {sciFi}
             </Carousel>
-          </div>
+
           </div>
 
+          <nav className= 'footer'>
+            <p>© 2016 Fakeflix. All rights reserved.</p>
+          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+                <p className= 'logo'>Linkedin</p>
+            </a>
+            <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+                <p className= 'logo'>Github</p>
+              </a>
+                </nav>
 
+
+        </div>
           )
       }else {
 

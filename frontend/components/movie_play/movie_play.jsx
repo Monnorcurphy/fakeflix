@@ -41,10 +41,12 @@ class MoviePlay extends React.Component{
 
       return(
         <div className='movie-play'>
+          <nav className='header'>
           <button className="logout movie-play" onClick={this.props.logout}>Log Out</button>
           <Link to="/" className="movie-play-header">
               <h1 className= 'logo'>FAKEFLIX</h1>
             </Link>
+          </nav>
         <div className='hide-these' id='hide-these'>
             <h1 className='title'>{this.props.movie.title}</h1>
             <p className='description'>Description: {this.props.movie.description}</p>
@@ -64,7 +66,15 @@ class MoviePlay extends React.Component{
           <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
 
           </div>
-
+          <nav className= 'footer'>
+            <p>© 2016 Fakeflix. All rights reserved.</p>
+          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+                <p className= 'logo'>Linkedin</p>
+            </a>
+            <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+                <p className= 'logo'>Github</p>
+              </a>
+                </nav>
         </div>
 
 
@@ -97,6 +107,15 @@ class MoviePlay extends React.Component{
           <iframe className='movie-player' src={`https://www.youtube.com/embed/${this.props.movie.url}?autoplay=1&modestbranding=1&iv_load_policy=3&showinfo=0&iv_load_policy=3}`} frameBorder="0" allowFullScreen/>
 
           </div>
+          <nav className= 'footer'>
+            <p>© 2016 Fakeflix. All rights reserved.</p>
+            <Link to="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+                <p className= 'logo'>Linkedin</p>
+            </Link>
+            <Link to="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+                <p className= 'logo'>Github</p>
+            </Link>
+                </nav>
 
         </div>)
     }
