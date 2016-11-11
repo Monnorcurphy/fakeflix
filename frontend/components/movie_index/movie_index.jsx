@@ -6,6 +6,7 @@ import SearchPage from '../search/search';
 var Carousel = require('nuka-carousel');
 
 
+
 class MovieIndex extends React.Component{
     constructor(props){
       super(props);
@@ -29,8 +30,11 @@ class MovieIndex extends React.Component{
     componentDidMount(){
       let that = this;
       sync(function* (){
-
         yield sleep(2500);
+        that.forceUpdate()
+        yield sleep(5000);
+        that.forceUpdate()
+        yield sleep(5000);
         that.forceUpdate()
       });
     }
@@ -136,6 +140,8 @@ class MovieIndex extends React.Component{
             </Carousel>
           </div>
           </div>
+
+
           )
       }else {
 
