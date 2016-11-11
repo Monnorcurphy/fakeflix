@@ -529,6 +529,9 @@ h1.logo{
   font-size: 36px;
 }
 
+
+
+
 div.main-content-splash{
   justify-content: space-between;
     display: inline-block;
@@ -577,10 +580,13 @@ h1.main-content-splash{
 p.main-content-splash{
   color: white;
   width: 90%;
-  height: 1%;
+  height: 4%;
   font-size: 100%;
   display: inline-block;
   padding-top: 20px;
+  left: 0%;
+  position: relative;
+  display: flex;
 }
 
 img.main-content-splash{
