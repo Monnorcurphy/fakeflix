@@ -76,7 +76,7 @@ class MovieIndex extends React.Component{
           <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
                 <p className= 'logo'>Linkedin</p>
             </a>
-            <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
                 <p className= 'logo'>Github</p>
               </a>
                 </nav>
@@ -155,7 +155,7 @@ class MovieIndex extends React.Component{
           <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
                 <p className= 'logo'>Linkedin</p>
             </a>
-            <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
+            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
                 <p className= 'logo'>Github</p>
               </a>
                 </nav>
