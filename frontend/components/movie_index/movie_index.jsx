@@ -66,7 +66,7 @@ class MovieIndex extends React.Component{
         return(
           <div>
             <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p className='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
+            <input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
@@ -108,23 +108,34 @@ class MovieIndex extends React.Component{
         return (<div className='index-page'>
           <div className='main-header'>
             <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <p className ='search'>Search:</p><input className='search header-bar' type='text' onChange={this.search} autoFocus/>
+            <input className='search header-bar' type='text' onChange={this.search} autoFocus/>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link></nav>
 
               <div className= 'content-holder'>
                 <div className='main-content-splash'>
-                <input className='button header-bar' id='unique'
-                  type='submit'
-                  onClick={this.handleClick(`/movie/${this.sample1.id}`)}
-                  value='Go to movie'/>
-                <h1 className='main-content-splash'>{this.sample1.title}</h1>
+                  <div className='title-div'>
+                  <h1 className='main-content-splash'>{this.sample1.title}</h1>
+                  </div>
+                  <div className='description-div'>
                   <p className='main-content-splash main-description'>Description: {this.sample1.description}</p>
+                  </div>
+                  <div className='year-div'>
                   <p className='main-content-splash'>Year: {this.sample1.year}</p>
+                  </div>
+                  <div className='genre-div'>
                   <p className='main-content-splash'>Genre(s): {this.sample1.genre}</p>
+                  </div>
+                  <div className='actors-div'>
                   <p className='main-content-splash'>Actor(s): {this.sample1.actors}</p>
-
+                  </div>
+                  <div className='movie-button-div'>
+                  <input className='button header-bar' id='unique'
+                    type='submit'
+                    onClick={this.handleClick(`/movie/${this.sample1.id}`)}
+                    value='Go to movie'/>
+                </div>
 
                 </div>
                 <img className='main-content-splash' id='splash-poster' src={this.sample1.image_url} onClick={this.handleClick(`/movie/${this.sample1.id}`)}/>

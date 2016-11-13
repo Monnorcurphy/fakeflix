@@ -62,21 +62,19 @@ class Splash extends React.Component{
     {
     return (<div className='splash-div'>
     <nav className='header'>
-      <Link to="/" className="header-bar">
+      <div className='logo-div'><Link to="/" className="header-bar">
           <h1 className= 'splash logo'>FAKEFLIX</h1>
       </Link>
-
-      <div className='login-signup'>
-        <button className= 'login' onClick={this.openModal.bind(this, 'login')}>Login!</button>
-        <button className= 'signup' onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
-      </div>
-        <div className ='over-demo'>
-          <h2>Tons of Trailers</h2>
-          <p>Only a few clicks away.</p>
-
     </div>
 
-      <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
+      <div className='login-signup'>
+        <div className= 'login-div'>
+          <button className= 'login' onClick={this.openModal.bind(this, 'login')}>Login!</button>
+        </div>
+        <div className='signup-div'>
+        <button className= 'signup' onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+        </div>
+      </div>
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
            style={authModalStyle}>
@@ -89,7 +87,18 @@ class Splash extends React.Component{
 
     </nav>
 
-    
+    <div className ='over-demo'>
+      <div>
+      <h2>Tons of Trailers</h2>
+      </div>
+      <div>
+      <p>Only a few clicks away.</p>
+      </div>
+      <div>
+      <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
+      </div>
+    </div>
+
         <nav className= 'footer'>
           <p>© 2016 Fakeflix. All rights reserved.</p>
         <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
