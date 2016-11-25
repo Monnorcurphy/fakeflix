@@ -46,7 +46,9 @@ class MoviePlay extends React.Component{
           <Link to="/" className="movie-play-header">
               <h1 className= 'logo'>FAKEFLIX</h1>
             </Link>
+            <Link className="back-to-main" to="/"><p>Main</p></Link>
           </nav>
+
         <div className='hide-these' id='hide-these'>
             <div>
               <h1 className='title'>{this.props.movie.title}</h1>

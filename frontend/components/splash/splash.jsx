@@ -69,10 +69,10 @@ class Splash extends React.Component{
 
       <div className='login-signup'>
         <div className= 'login-div'>
-          <button className= 'login' onClick={this.openModal.bind(this, 'login')}>Login!</button>
+          <button className= 'login' onClick={this.openModal.bind(this, 'login')}>Login</button>
         </div>
         <div className='signup-div'>
-        <button className= 'signup' onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+        <button className= 'signup' onClick={this.openModal.bind(this, 'signup')}>Sign up</button>
         </div>
       </div>
         <Modal isOpen={this.state.authModal}
@@ -102,7 +102,7 @@ class Splash extends React.Component{
         <nav className= 'footer'>
           <p>© 2016 Fakeflix. All rights reserved.</p>
         <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-              <p className= 'logo'>Linkedin</p>
+              <p className= 'logo linked'>Linkedin</p>
           </a>
           <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
               <p className= 'logo'>Github</p>

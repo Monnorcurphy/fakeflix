@@ -144,7 +144,7 @@ div.hide-these:hover{
 
 div.hide-these{
   position: absolute;
-  width: 35%;
+  width: 40%;
   padding: 8px;
   opacity: 0.0;
   height: 60%;
@@ -156,7 +156,7 @@ div.hide-these{
 h1.title{
   top: 5%;
   color: white;
-  font-size: 3vw;
+  font-size: 2.6vw;
   padding: 7px;
   position: absolute;
 }
@@ -165,9 +165,9 @@ h1.title{
 p.description{
   position: absolute;
   padding: 7px;
-  top: 17%;
+  top: 21%;
   color: white;
-  font-size: 2vw;
+  font-size: 1.8vw;
   margin: 3px;
 }
 
@@ -176,21 +176,21 @@ p.year{
   position: absolute;
   padding: 7px;
   top: 47%;
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
 p.genre{
   color: white;
   position: absolute;
   padding: 7px;
   top: 59%;
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
 p.actors{
   color: white;
   position: absolute;
   padding: 7px;
   top: 70%;
-  font-size: 2vw;
+  font-size: 1.7vw;
 }
 
 img.movie-poster:hover {
@@ -271,12 +271,27 @@ img.splash-image{
   z-index: -100;
 }
 
-
+a.back-to-main{
+  font-size: 13px;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    border: none;
+    margin-top: 10px;
+    margin-right: 6px;
+    margin-bottom: 7px;
+    position: relative;
+    left: 81%;
+    padding: 0px;
+    padding-right: 13px;
+    padding-left: 13px;
+}
 
 div.over-demo{
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50px;
+  color: white;
 }
 
 div.over-demo > h2{
@@ -350,6 +365,19 @@ div.signup-div{
   display: inline-block;
 }
 
+button.signup{
+  left: 56%;
+  position: relative;
+}
+
+p.logo.linked{
+  position: relative;
+    left: 60%;
+    padding-right: 10px;
+}
+
+
+
 div.login-div{
   width: 50%;
   float: left;
@@ -365,8 +393,6 @@ div.logo-div{
 button.splash-demo{
   position: absolute;
   font-size: 18px;
-  top: 300px;
-  left: 50px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -379,8 +405,9 @@ header{
 
 nav.footer > p {
   color: white;
-  position: absolute;
-  left: 3%;
+  position: relative;
+  left: -15%;
+  padding-left: 10px;
 }
 
 div.main-header{
@@ -404,6 +431,9 @@ img.display-film:last-child{
   float: right;
 }
 
+div.slider.carousel.bottom{
+  padding-bottom: 55px;
+}
 
 div.main-header > button{
   max-height: 30px;
@@ -421,13 +451,13 @@ div.main-header > input.button{
   top: 200px;
   cursor: pointer;
 }
+
+
 input.search{
   max-height: 30px;
   min-width: 150px;
   display: inline-block;
   position: fixed;
-  left: 38%;
-  top: 1%;
   margin: 11px;
   z-index: 3;
   font-size:13px;color:gray;
@@ -476,6 +506,20 @@ h3.IMDB-50{
 input#unique{
   z-index: 15;
   position: relative;
+  left: 83%;
+}
+
+div.logout.header-bar{
+  position: absolute;
+    right: 1%;
+    float: right;
+}
+
+div.search.header-bar{
+  width: 25%;
+    right: 10%;
+    padding-top: 5px;
+    position: fixed;
 }
 
 nav{
@@ -509,7 +553,7 @@ a.footer-bar:first-child{
 
 a.footer-bar:last-child{
   position: absolute;
-  right: 5%;
+  left: 90%
 }
 
 p.footer-bar{
@@ -585,13 +629,14 @@ p.main-content-splash{
 }
 
 img.main-content-splash{
-  display: inline-block; 
+  display: inline-block;
   margin: 10px;
   top: 8%;
-  right: 4%;
+  right: 8%;
   padding-right: 5px;
   position: relative;
-  float: right;;
+  float: right;
+  min-width: 30%;
 }
 
 
@@ -653,6 +698,8 @@ span.main-movies > img{
 
 button.login{
   float: right;
+  position: relative;
+  left: 48%;
 }
 
 
@@ -667,7 +714,7 @@ body{ margin: 1px; }
 .rating {
   border: none;
   width: 115px;
-  left: 0%;
+  left: 20%;
   position: absolute;
   bottom: 5%;
 
@@ -676,7 +723,7 @@ body{ margin: 1px; }
 .rating > input { display: none; }
 .rating > label:before {
   margin: 3px;
-  font-size: 70%;
+  font-size: 1.2vw;
   font-family: FontAwesome;
   display: inline-block;
   content: "\f005";

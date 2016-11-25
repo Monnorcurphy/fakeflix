@@ -39,8 +39,6 @@ class MovieIndex extends React.Component{
       });
     }
 
-
-
     redirectIfLoggedOut() {
       if (!this.props.loggedIn){
         this.props.router.replace("/");
@@ -50,7 +48,6 @@ class MovieIndex extends React.Component{
     handleClick(url){
       return e => this.props.router.push(url)
     }
-
 
     search(parameters){
       let string = `${parameters.target.value}`;
@@ -65,15 +62,21 @@ class MovieIndex extends React.Component{
       if (this.state.filter != ''){
         return(
           <div>
-            <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
+            <nav className='header'>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
-              </Link></nav>
+              </Link>
+            <div className='search header-bar'>
+              <input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
+            </div>
+            <div className='logout header-bar'>
+              <button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
+            </div>
+          </nav>
         <SearchPage movies={this.props.movies} search={this.state.filter}/>
           <nav className= 'footer'>
             <p>© 2016 Fakeflix. All rights reserved.</p>
-          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
+            <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
                 <p className= 'logo'>Linkedin</p>
             </a>
             <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
@@ -107,11 +110,17 @@ class MovieIndex extends React.Component{
 
         return (<div className='index-page'>
           <div className='main-header'>
-            <nav className='header'><button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
-            <input className='search header-bar' type='text' onChange={this.search} autoFocus/>
+            <nav className='header'>
               <Link to="/" className="header-bar">
                   <h1 className= 'logo'>FAKEFLIX</h1>
-              </Link></nav>
+              </Link>
+            <div className='search header-bar'>
+              <input className='search header-bar' type='text' onChange={this.search} autoFocus/>
+            </div>
+            <div className='logout header-bar'>
+              <button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
+            </div>
+            </nav>
 
               <div className= 'content-holder'>
                 <div className='main-content-splash'>
@@ -155,7 +164,7 @@ class MovieIndex extends React.Component{
               {comedy}
             </Carousel>
             <h3 className= 'label'>Sci-Fi and Fantasy</h3>
-            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
+            <Carousel className= 'carousel bottom' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
               {sciFi}
             </Carousel>
 
