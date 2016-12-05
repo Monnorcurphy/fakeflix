@@ -55,6 +55,7 @@ class MovieIndex extends React.Component{
     }
 
     render () {
+      console.log(Carousel);
       if (!this.sample1){
         this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
       }

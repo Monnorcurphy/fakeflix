@@ -161,6 +161,36 @@ h1.title{
   position: absolute;
 }
 
+input.login-input{
+  margin-left: 50px;
+  min-width: 200px;
+}
+
+input.button.modal{
+  position: absolute;
+  top: 68%;
+  left: 76%;
+}
+
+input.button.submit.modal{
+  position: absolute;
+  top: 68%;
+  left: 60%;
+}
+
+ul.errors{
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  position: fixed;
+  top: 18%;
+  left: 51%;
+  list-style: none;
+}
+
+p.login-modal{
+  margin-left: 50px;
+}
 
 p.description{
   position: absolute;
@@ -199,8 +229,7 @@ img.movie-poster:hover {
 }
 
 img.movie-poster{
-  max-width: 75px;
-  max-height: 125px;
+  max-height: 200px;
   width: auto;
   height: auto;
   min-width: 55%;
@@ -289,7 +318,7 @@ a.back-to-main{
 
 div.over-demo{
   position: absolute;
-  top: 40%;
+  top: 61%;
   left: 50px;
   color: white;
 }
@@ -308,7 +337,7 @@ div.splash-div{
   width: 2600px;
   background-repeat: no-repeat;
   background-position: center;
-  background: url('http://res.cloudinary.com/dqiuefax1/image/upload/v1478817057/giphy_5_txuflu.gif') no-repeat center center fixed;
+  background: url('http://res.cloudinary.com/dqiuefax1/image/upload/v1480898800/a7AM8L_i4vcko.gif') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -335,7 +364,7 @@ iframe.splash-player{
 
 input.button {
   font: Sans-serif;
-  font-size: 1.2vw;
+  font-size: 14px;
   border-radius: 5px;
   color: white;
   background-color: red;
@@ -455,11 +484,12 @@ div.main-header > input.button{
 
 input.search{
   max-height: 30px;
-  min-width: 150px;
+  min-width: 220px;
   display: inline-block;
   position: fixed;
   margin: 11px;
   z-index: 3;
+  right: 15%;
   font-size:13px;color:gray;
   background-image:url('http://i47.tinypic.com/r02vbq.png');
   background-repeat:no-repeat;
@@ -506,7 +536,7 @@ h3.IMDB-50{
 input#unique{
   z-index: 15;
   position: relative;
-  left: 83%;
+  left: 75%;
 }
 
 div.logout.header-bar{
@@ -713,7 +743,8 @@ body{ margin: 1px; }
 
 .rating {
   border: none;
-  width: 115px;
+  min-width: 115px;
+  max-width: 300px;
   left: 20%;
   position: absolute;
   bottom: 5%;
@@ -723,7 +754,7 @@ body{ margin: 1px; }
 .rating > input { display: none; }
 .rating > label:before {
   margin: 3px;
-  font-size: 1.2vw;
+  font-size: 14px;
   font-family: FontAwesome;
   display: inline-block;
   content: "\f005";

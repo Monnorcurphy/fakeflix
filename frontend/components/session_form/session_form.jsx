@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
 
 	renderErrors() {
 		return(
-			<ul>
+			<ul className='errors'>
 				{this.props.errors.map((error, i) => (
 					<li key={`error-${i}`}>
 						{error}
@@ -68,25 +68,25 @@ class SessionForm extends React.Component {
 					<div className="login-form">
 						<br/>
 						<h2 className='signup-or-login'>{header}</h2>
-						<label className='signup-or-login'>Username:
+						<label className='signup-or-login'><p className='login-modal'>Username: </p>
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
 						</label>
 						<br/>
-						<label className='signup-or-login'> Password:  
+						<label className='signup-or-login'> <p className='login-modal'>Password: </p>
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
 								className="login-input" />
 						</label>
 						<br/>
-						<input className='button' type="submit" value="Submit" />
+						<input className='button submit modal' type="submit" value="Submit" />
 					</div>
 				</form>
 				<br></br>
-				<input className='button' type= "submit" value="Demo" onClick={this.handleDemo}/>
+				<input className='button modal' type= "submit" value="Demo" onClick={this.handleDemo}/>
 			</div>
 		);
 	}
