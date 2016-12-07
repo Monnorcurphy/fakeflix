@@ -42,11 +42,12 @@ class MoviePlay extends React.Component{
       return(
         <div className='movie-play'>
           <nav className='header'>
-          <button className="logout movie-play" onClick={this.props.logout}>Log Out</button>
           <Link to="/" className="movie-play-header">
-              <h1 className= 'logo'>FAKEFLIX</h1>
+              <h1 className= 'exit'>X</h1>
             </Link>
-            <Link className="back-to-main" to="/"><p>Main</p></Link>
+          <Link to="/" className="movie-play-header">
+              <h1 className= 'logo'>Fakeflix</h1>
+            </Link>
           </nav>
 
         <div className='hide-these' id='hide-these'>
@@ -93,10 +94,14 @@ class MoviePlay extends React.Component{
 
       return(
         <div className='movie-play'>
-          <button className="logout movie-play" onClick={this.props.logout}>Log Out</button>
+          <nav className='header'>
           <Link to="/" className="movie-play-header">
-              <h1 className= 'logo'>FAKEFLIX</h1>
+              <h1 className= 'exit'>X</h1>
             </Link>
+          <Link to="/" className="movie-play-header">
+              <h1 className= 'logo'>Fakeflix</h1>
+            </Link>
+          </nav>
         <div className='hide-these' id='hide-these'>
             <h1 className='title'>{this.props.movie.title}</h1>
             <p className='description'>Description: {this.props.movie.description}</p>

@@ -481,16 +481,30 @@ div.main-header > input.button{
   cursor: pointer;
 }
 
+h1.exit{
+  color: white;
+  position: fixed;
+  right: 2%;
+  font-size: 40px;
+  padding: 10px;
+}
+
+h1.exit:hover{
+  color: red;
+  cursor: pointer;
+}
+
 
 input.search{
-  max-height: 30px;
-  min-width: 220px;
+  height: 32px;
+  min-width: 270px;
   display: inline-block;
   position: fixed;
   margin: 11px;
   z-index: 3;
   right: 15%;
-  font-size:13px;color:gray;
+  font-size: 18px;
+  color:gray;
   background-image:url('http://i47.tinypic.com/r02vbq.png');
   background-repeat:no-repeat;
   background-position:right ;outline:0;

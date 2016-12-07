@@ -32,10 +32,6 @@ class MovieIndex extends React.Component{
       sync(function* (){
         yield sleep(2500);
         that.forceUpdate()
-        yield sleep(5000);
-        that.forceUpdate()
-        yield sleep(5000);
-        that.forceUpdate()
       });
     }
 
@@ -55,7 +51,7 @@ class MovieIndex extends React.Component{
     }
 
     render () {
-      console.log(Carousel);
+      
       if (!this.sample1){
         this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
       }
