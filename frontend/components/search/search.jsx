@@ -28,37 +28,37 @@ class SearchList extends React.Component{
     let last = 0;
     let count = 0;
     let moviesArray = [];
-    var match_actors = []
-    let display = []
+    // var match_actors = []
+    // let display = []
     if(this.props.movies){
       let searched = [];
         for (let key in this.props.movies){
-          match_actors.push(this.props.movies[key].actors.join().split(','))
-          function addToObject(array) {
-            let object = {}
-            let arrayed = array.toString().split(',')
-            arrayed.forEach(function(el) {
-              if (object.el !== true){
-                object.el = true
-
-              }
-            })
-            return object
-
-          }
-          match_actors = addToObject(match_actors)
+          // match_actors.push(this.props.movies[key].actors.join().split(','))
+          // function addToObject(array) {
+          //   let object = {}
+          //   let arrayed = array.toString().split(',')
+          //   arrayed.forEach(function(el) {
+          //     if (object.el !== true){
+          //       object.el = true
+          //
+          //     }
+          //   })
+          //   return object
+          //
+          // }
+          // match_actors = addToObject(match_actors)
 
 
           if (this.props.movies[key].title.toLowerCase().match(this.props.search.toLowerCase()))
           searched.push(<MovieIndexItem searched= {true}  key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
         }
-        
-        debugger;
-        match_actors.forEach((el) => {
-          if(el.toLowerCase().match(this.props.search.toLowerCase()))
-            display.push(el)
-        })
-        debugger;
+
+        // debugger;
+        // match_actors.forEach((el) => {
+        //   if(el.toLowerCase().match(this.props.search.toLowerCase()))
+        //     display.push(el)
+        // })
+        // debugger;
 
 
 
@@ -71,10 +71,7 @@ class SearchList extends React.Component{
               </Masonry>
 
               </div>
-            <div className = 'actor-search'>
-              <p>Actors</p>
-              <div>{display}</div>
-            </div>
+            
         </div>
       )
     }else{
