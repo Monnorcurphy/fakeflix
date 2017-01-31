@@ -129,6 +129,12 @@ class MovieIndex extends React.Component{
                 <div className='main-content-splash'>
                   <div className='title-div'>
                   <h1 className='main-content-splash'>{this.sample1.title}</h1>
+                    <div className='movie-button-div'>
+                    <input className='button header-bar' id='unique'
+                      type='submit'
+                      onClick={this.handleClick(`/movie/${this.sample1.id}`)}
+                      value='Go to movie'/>
+                  </div>
                   </div>
                   <div className='description-div'>
                   <p className='main-content-splash main-description'>Description: {this.sample1.description}</p>
@@ -142,12 +148,7 @@ class MovieIndex extends React.Component{
                   <div className='actors-div'>
                   <p className='main-content-splash'>Actor(s): {this.sample1.actors}</p>
                   </div>
-                  <div className='movie-button-div'>
-                  <input className='button header-bar' id='unique'
-                    type='submit'
-                    onClick={this.handleClick(`/movie/${this.sample1.id}`)}
-                    value='Go to movie'/>
-                </div>
+
 
                 </div>
                 <img className='main-content-splash' id='splash-poster' src={this.sample1.image_url} onClick={this.handleClick(`/movie/${this.sample1.id}`)}/>

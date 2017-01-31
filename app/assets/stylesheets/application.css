@@ -20,6 +20,32 @@ body {
   font-family: sans-serif;
 }
 
+.selection-gif, .movie-gif {
+  max-width: 55%;
+  max-height: 300px;
+
+}
+
+.movie-selection{
+  display: flex;
+  margin: 25px;
+}
+
+.moving-search, .moving-trailer{
+  display: block;
+  margin: 25px;
+}
+
+.movie-gif {
+  float: right;
+
+  margin-right: 25px
+}
+
+.trailer-text, .selection-text{
+  padding: 10px;
+  font-size: 2vw;
+}
 
 div.login-signup > a{
   font-size: 14px;
@@ -118,6 +144,15 @@ div.root{
   height: 100%;
   width: 100%;
   color: white;
+}
+
+.movie-button-div{
+  width: 50%;
+
+}
+
+.title-div{
+  display: flex;
 }
 
 div.slider-decorator-2{
@@ -576,9 +611,16 @@ h3.IMDB-50{
 }
 
 input#unique{
-  z-index: 15;
+  left: 40%;
+  bottom: 25%;
   position: relative;
-  left: 75%;
+}
+
+.actor-search{
+  top: 16%;
+  position: fixed;
+  padding-left: 40px;
+  font-size: 3vw;
 }
 
 div.logout.header-bar{

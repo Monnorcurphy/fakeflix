@@ -58,6 +58,8 @@ class Splash extends React.Component{
     this.props.demo()
   }
 
+// ADD A MOVIE-SEARCH DIV, CHECK APPLICATION CSS FOR NAME
+
   render () {
     {
     return (<div className='splash-div'>
@@ -101,6 +103,30 @@ class Splash extends React.Component{
       </div>
       <div>
       <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
+      </div>
+    </div>
+
+    <div className='promotional-container'>
+
+      <div className='movie-selection'>
+        <img className='selection-gif' src='http://res.cloudinary.com/dqiuefax1/image/upload/v1485901918/ezgif.com-optimize_1_y3h5jv.gif'/>
+        <div>
+          <p className='selection-text'> If you are bored by the idea
+          of spending hours watching a film, but you fear the disaster of
+          becoming a social outcast, worry not! You can watch hundreds of
+          free trailers, here on our website!</p>
+        </div>
+      </div>
+
+      <div className='moving-trailer'>
+        <img className='movie-gif' src='http://res.cloudinary.com/dqiuefax1/image/upload/v1485903874/ezgif.com-optimize_2_jr8i2y.gif'/>
+        <div>
+        <p className='trailer-text'>If you are distracted easily, or have
+        a desire to tell someone just what you think of a trailer, have
+        no fear, Fakeflix is here to satiate that urge for you. Hundreds
+        of trailers which only last a few minutes, you'll never have to
+        pay attention hours of dialogue again!</p>
+        </div>
       </div>
     </div>
 
