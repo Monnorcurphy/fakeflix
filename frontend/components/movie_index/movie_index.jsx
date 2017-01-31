@@ -51,7 +51,7 @@ class MovieIndex extends React.Component{
     }
 
     render () {
-      
+
       if (!this.sample1){
         this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
       }
@@ -72,14 +72,20 @@ class MovieIndex extends React.Component{
           </nav>
         <SearchPage movies={this.props.movies} search={this.state.filter}/>
           <nav className= 'footer'>
-            <p>© 2016 Fakeflix. All rights reserved.</p>
-            <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-                <p className= 'logo'>Linkedin</p>
-            </a>
-            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
-                <p className= 'logo'>Github</p>
-              </a>
-                </nav>
+            <div className='legal'>
+            <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
+            </div>
+            <div className="contact-info">
+              <div className='linkedin-div'>
+                <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="linkedin ">
+                  LinkedIn</a>
+              </div>
+              <div className= 'github-div' >
+                <a href="https://github.com/Monnorcurphy/fullstack" className="github">
+                  Github</a>
+              </div>
+            </div>
+        </nav>
         </div>
       )}
       if (this.sample1){
@@ -149,35 +155,38 @@ class MovieIndex extends React.Component{
           </div>
           <div className='main-div'>
             <h3 className= 'label IMDB-50'>IMDB Top 50</h3>
-            <Carousel className= 'carousel IMDB-50' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} initialSlideHeight ={200}>
+            <Carousel className= 'carousel IMDB-50' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={185}>
               {movies}
             </Carousel>
             <h3 className= 'label'>Action</h3>
-            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75}>
+            <Carousel className= 'carousel' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170}>
               {action}
             </Carousel>
             <h3 className= 'label'>Comedies</h3>
-            <Carousel className= 'carousel' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
+            <Carousel className= 'carousel' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170}>
               {comedy}
             </Carousel>
             <h3 className= 'label'>Sci-Fi and Fantasy</h3>
-            <Carousel className= 'carousel bottom' slidesToShow={6} slidesToScroll={2} dragging={true} slideWidth={0.75} >
+            <Carousel className= 'carousel bottom' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170} >
               {sciFi}
             </Carousel>
 
           </div>
-
           <nav className= 'footer'>
-            <p>© 2016 Fakeflix. All rights reserved.</p>
-          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-                <p className= 'logo'>Linkedin</p>
-            </a>
-            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
-                <p className= 'logo'>Github</p>
-              </a>
-                </nav>
-
-
+            <div className='legal'>
+            <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
+            </div>
+            <div className="contact-info">
+              <div className='linkedin-div'>
+                <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="linkedin ">
+                  LinkedIn</a>
+              </div>
+              <div className= 'github-div' >
+                <a href="https://github.com/Monnorcurphy/fullstack" className="github">
+                  Github</a>
+              </div>
+            </div>
+        </nav>
         </div>
           )
       }else {

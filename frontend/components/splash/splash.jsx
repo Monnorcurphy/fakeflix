@@ -87,12 +87,17 @@ class Splash extends React.Component{
 
     </nav>
 
+    <div>
+      <img className="splash-gif"
+           src="http://res.cloudinary.com/dqiuefax1/image/upload/v1480898800/a7AM8L_i4vcko.gif" />
+    </div>
+
     <div className ='over-demo'>
       <div>
-      <h2>Tons of Trailers</h2>
+      <h2 className='attention-line'>Tons of Trailers</h2>
       </div>
       <div>
-      <p>Only a few clicks away.</p>
+      <p className='tag-line'>Only a few clicks away.</p>
       </div>
       <div>
       <button className='splash-demo' onClick= {this.demo}>Demo Login</button>
@@ -100,14 +105,20 @@ class Splash extends React.Component{
     </div>
 
         <nav className= 'footer'>
-          <p>© 2016 Fakeflix. All rights reserved.</p>
-        <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-              <p className= 'logo linked'>Linkedin</p>
-          </a>
-          <a href="https://github.com/Monnorcurphy/fullstack" className="footer-bar">
-              <p className= 'logo'>Github</p>
-            </a>
-          </nav>
+          <div className='legal'>
+          <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
+          </div>
+          <div className="contact-info">
+            <div className='linkedin-div'>
+              <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="linkedin ">
+                LinkedIn</a>
+            </div>
+            <div className= 'github-div' >
+              <a href="https://github.com/Monnorcurphy/fullstack" className="github">
+                Github</a>
+            </div>
+          </div>
+      </nav>
   </div>)
 }}
 }

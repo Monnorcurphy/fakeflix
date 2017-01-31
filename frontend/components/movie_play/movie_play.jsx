@@ -77,14 +77,20 @@ class MoviePlay extends React.Component{
 
           </div>
           <nav className= 'footer'>
-            <p>© 2016 Fakeflix. All rights reserved.</p>
-          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-                <p className= 'logo'>Linkedin</p>
-            </a>
-            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
-                <p className= 'logo'>Github</p>
-              </a>
-                </nav>
+            <div className='legal'>
+            <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
+            </div>
+            <div className="contact-info">
+              <div className='linkedin-div'>
+                <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="linkedin ">
+                  LinkedIn</a>
+              </div>
+              <div className= 'github-div' >
+                <a href="https://github.com/Monnorcurphy/fullstack" className="github">
+                  Github</a>
+              </div>
+            </div>
+        </nav>
         </div>
 
 
@@ -122,13 +128,19 @@ class MoviePlay extends React.Component{
 
           </div>
           <nav className= 'footer'>
-            <p>© 2016 Fakeflix. All rights reserved.</p>
-          <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="footer-bar">
-                <p className= 'logo'>Linkedin</p>
-            </a>
-            <a href="https://github.com/Monnorcurphy/fakeflix" className="footer-bar">
-                <p className= 'logo'>Github</p>
-              </a>
+              <div className='legal'>
+              <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
+              </div>
+              <div className="contact-info">
+                <div className='linkedin-div'>
+                  <a href="https://www.linkedin.com/profile/guided?trk=uno-choose-ge-no-intent&dl=no" className="linkedin ">
+                    LinkedIn</a>
+                </div>
+                <div className= 'github-div' >
+                  <a href="https://github.com/Monnorcurphy/fullstack" className="github">
+                    Github</a>
+                </div>
+              </div>
                 </nav>
         </div>)
     }

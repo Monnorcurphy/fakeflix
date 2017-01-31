@@ -16,6 +16,11 @@
  /*@import 'whatever';*/
  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+body {
+  font-family: sans-serif;
+}
+
+
 div.login-signup > a{
   font-size: 14px;
   border-radius: 5px;
@@ -25,7 +30,7 @@ div.login-signup > a{
   padding: 10px;
 }
 
-div.login-signup{
+div.contact-info, div.login-signup{
   width: 50%;
 }
 
@@ -50,7 +55,9 @@ img.movie-searched-poster{
 }
 
 img.movie-searched-poster:hover{
-  border: red 1px solid;
+  border-left: red 2px solid;
+  cursor: pointer;
+  max-height: 315px;
 }
 
 div.search-list{
@@ -224,8 +231,9 @@ p.actors{
 }
 
 img.movie-poster:hover {
-    border-left: red 2px solid;
-    cursor: pointer;
+  border-left: red 2px solid;
+  cursor: pointer;
+  max-height: 210px;
 }
 
 img.movie-poster{
@@ -283,6 +291,10 @@ a.splash-logo{
   left: 3%;
 }
 
+.copyright{
+  padding-left: 15px;
+  width: 300px;
+}
 
 button.movie-play{
   position: absolute;
@@ -318,26 +330,26 @@ a.back-to-main{
 
 div.over-demo{
   position: absolute;
-  top: 61%;
-  left: 50px;
+  top: 20%;
+  margin-left: 10%;
   color: white;
+  min-width: 200px;
 }
 
-div.over-demo > h2{
-  color: white
+h2.attention-line{
+  color: white;
+  font-size: 5vmax;
+
 }
-div.over-demo > p{
-  color: white
+p.tag-line{
+  color: white;
+  font-size: 3vmax;
 }
 
 div.splash-div{
-  min-width: 200px;
-  min-height: 700px;
-  height: 1300px;
-  width: 2600px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background: url('http://res.cloudinary.com/dqiuefax1/image/upload/v1480898800/a7AM8L_i4vcko.gif') no-repeat center center fixed;
+  height: 960px;
+
+  /*background: url('http://res.cloudinary.com/dqiuefax1/image/upload/v1480898800/a7AM8L_i4vcko.gif') no-repeat center;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -367,7 +379,7 @@ input.button {
   font-size: 14px;
   border-radius: 5px;
   color: white;
-  background-color: red;
+  background-color: #E50914 !important;
   border: none;
   padding: 7px;
   margin: 5px;
@@ -375,12 +387,13 @@ input.button {
   margin-right: 20px;
   cursor: pointer;
 }
+
 button {
   font: Sans-serif;
   font-size: 14px;
   border-radius: 5px;
   color: white;
-  background-color: red;
+  background-color: #E50914 !important;
   border: none;
   padding: 10px;
   margin-top: 10px;
@@ -388,54 +401,64 @@ button {
   cursor: pointer;
 }
 
-div.signup-div{
+button:hover{
+  background:#F92F30;
+}
+
+.github-div, div.signup-div{
   width: 50%;
   float: right;
   display: inline-block;
 }
 
-button.signup{
+a.github, button.signup{
   left: 56%;
   position: relative;
 }
 
 p.logo.linked{
-  position: relative;
-    left: 60%;
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 
 
-div.login-div{
+.linkedin-div, div.login-div{
   width: 50%;
   float: left;
   display: inline-block;
 }
 
-div.logo-div{
+div.legal, div.logo-div{
   width: 50%;
   float: left;
 }
 
+div.contact-info > div {
+  color: white;
+  padding-top: 15px;
+}
+
+.splash-gif{
+  width: 94%;
+  margin: 3%;
+  margin-top: 70px;
+}
 
 button.splash-demo{
   position: absolute;
-  font-size: 18px;
+  font-size: 2vmax;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
   cursor: pointer;
-
 }
+
 header{
   position: absolute;
 }
 
 nav.footer > p {
   color: white;
-  position: relative;
-  left: -15%;
   padding-left: 10px;
 }
 
@@ -570,7 +593,7 @@ nav{
   display: flex;
   z-index: 13;
   width: 100%;
-  height: 7%;
+  height: 9%;
   opacity: .93;
   position: fixed;
 
@@ -583,28 +606,49 @@ nav.header{
 
 nav.footer{
   bottom: 0%;
-  justify-content: space-around;
+  display: flex;
+    z-index: 13;
+    width: 100%;
+    height: 7%;
+    opacity: .93;
+    position: fixed;
+    background: #1A1A1A;
+  /*justify-content: space-around;*/
 }
 
-a.footer-bar{
+/*a.footer-bar{
   color: red;
-}
+  /*position: relative;
+  right: 5%;
+  margin-left:30%;
+  padding:10px;*/
 
-a.footer-bar:first-child{
-  position: absolute;
-  right: 10%;
+
+/*a.footer-bar:first-child{
 }
 
 a.footer-bar:last-child{
   position: absolute;
-  left: 90%
+  left:90%
+}*/
+
+
+
+.github-div{
+  color: red;
+  right:86%
 }
 
-p.footer-bar{
+.linkedin-div{
+  color:red;
+  left:48%
+}
+
+/*p.footer-bar{
   color: white;
   position: absolute;
   left: 3%;
-}
+}*/
 
 
 p.search{
@@ -680,7 +724,8 @@ img.main-content-splash{
   padding-right: 5px;
   position: relative;
   float: right;
-  min-width: 30%;
+  width: 35%;
+    max-width: 400px;
 }
 
 
@@ -706,11 +751,13 @@ div.IMDB-50{
 }
 
 div.slider{
-  position: absolute;
   bottom: 1%;
-  background-color: #141414;
-  padding: 15px;
-  min-height: 150px;
+    background-color: #141414;
+    padding: 15px;
+    min-height: 150px;
+    width: 90% !important;
+    min-width: 675px;
+    margin-left: 40px;
 
 }
 
@@ -740,13 +787,15 @@ span.main-movies > img{
 }
 
 
-button.login{
+a.linkedin, button.login{
   float: right;
   position: relative;
   left: 48%;
 }
 
-
+a.linkedin, a.github, p.copyright {
+  color: white;
+}
 
 
 fieldset, label { margin: 0; padding: 0; }
@@ -793,7 +842,7 @@ body{ margin: 1px; }
 
 div.loading
 {
-  background-color: #404456;
+  background-color: #1A1A1A;
   width: 4000px;
   height: 4000px;
 
@@ -808,7 +857,7 @@ div.loading
   margin-left: -2.7em;
   width: 5.4em;
   height: 5.4em;
-  background-color: #404456;
+  background-color: #1A1A1A;
 }
 
 #hill {
@@ -831,7 +880,7 @@ div.loading
   width: 7.1em;
   height: 7.1em;
   left: 0;
-  background-color: #404456;
+  background-color: #1A1A1A;
 }
 
 #box {
