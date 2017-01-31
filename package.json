@@ -4,8 +4,8 @@
   "description": "== README",
   "main": "index.js",
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.2.1",
+    "npm": "3.9.3"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/webpack"
