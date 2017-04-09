@@ -36,9 +36,9 @@ class MoviePlay extends React.Component{
 
 
   render(){
-
+    if (this.props.movie &&  typeof this.props.movie.actors != String)
+        this.props.movie.actors = this.props.movie.actors
     if (this.props.movie && this.props.movie.avg_rating === 0){
-
       return(
         <div className='movie-play'>
           <nav className='header'>
@@ -63,12 +63,12 @@ class MoviePlay extends React.Component{
               <p className='actors'>Actor(s): {this.props.movie.actors}</p>
             </div>
             <div>
-              <fieldset  className ='rating' class="rating">
-              <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"onClick={this.rateMovie.bind(null, 5)} ></label>
-              <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars" onClick={this.rateMovie.bind(null, 4)}></label>
-              <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars" onClick={this.rateMovie.bind(null, 3)}></label>
-              <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars" onClick={this.rateMovie.bind(null, 2)} ></label>
-              <input type="radio" id="star1" name="rating" value="1"/><label class = "full" for="star1" title="Bad - 1 star"  onClick={this.rateMovie.bind(null, 1)}></label>
+              <fieldset  className ='rating'>
+              <input type="radio" id="star5" name="rating" value="5" /><label className = "full" htmlFor="star5" title="Awesome - 5 stars"onClick={this.rateMovie.bind(null, 5)} ></label>
+              <input type="radio" id="star4" name="rating" value="4" /><label className = "full" htmlFor="star4" title="Pretty good - 4 stars" onClick={this.rateMovie.bind(null, 4)}></label>
+              <input type="radio" id="star3" name="rating" value="3" /><label className = "full" htmlFor="star3" title="Meh - 3 stars" onClick={this.rateMovie.bind(null, 3)}></label>
+              <input type="radio" id="star2" name="rating" value="2" /><label className = "full" htmlFor="star2" title="Kinda bad - 2 stars" onClick={this.rateMovie.bind(null, 2)} ></label>
+              <input type="radio" id="star1" name="rating" value="1"/><label className = "full" htmlFor="star1" title="Bad - 1 star"  onClick={this.rateMovie.bind(null, 1)}></label>
               </fieldset>
             </div>
           </div>
@@ -114,12 +114,12 @@ class MoviePlay extends React.Component{
             <p className='year'>Year: {this.props.movie.year}</p>
             <p className='genre'>Genre(s): {this.props.movie.genre}</p>
             <p className='actors'>Actor(s): {this.props.movie.actors}</p>
-            <fieldset  className ='rating' class="rating">
-      <input type="radio" id="star5" name="rating" value="5" checked={this.props.movie.avg_rating === 5 ? 'checked' : false} /><label class = "full" for="star5" title="Awesome - 5 stars" onClick={this.rateMovie.bind(null, 5)}></label>
-      <input type="radio" id="star4" name="rating" value="4"  checked={this.props.movie.avg_rating === 4 ? 'checked' : false} /><label class = "full" for="star4" title="Pretty good - 4 stars" onClick={this.rateMovie.bind(null, 4)}></label>
-      <input type="radio" id="star3" name="rating" value="3" checked={this.props.movie.avg_rating === 3 ? 'checked' : false} /><label class = "full" for="star3" title="Meh - 3 stars" onClick={this.rateMovie.bind(null, 3)}></label>
-      <input type="radio" id="star2" name="rating" value="2"  checked={this.props.movie.avg_rating === 2 ? 'checked' : false}/><label class = "full" for="star2" title="Kinda bad - 2 stars" onClick={this.rateMovie.bind(null, 2)}></label>
-      <input type="radio" id="star1" name="rating" value="1" checked={this.props.movie.avg_rating === 1 ? 'checked' : false} /><label class = "full" for="star1" title="Sucks big time - 1 star" onClick={this.rateMovie.bind(null, 1)}></label>
+            <fieldset  className ='rating'>
+      <input type="radio" id="star5" name="rating" value="5" checked={this.props.movie.avg_rating === 5 ? 'checked' : false} /><label className = "full" htmlFor="star5" title="Awesome - 5 stars" onClick={this.rateMovie.bind(null, 5)}></label>
+      <input type="radio" id="star4" name="rating" value="4"  checked={this.props.movie.avg_rating === 4 ? 'checked' : false} /><label className = "full" htmlFor="star4" title="Pretty good - 4 stars" onClick={this.rateMovie.bind(null, 4)}></label>
+      <input type="radio" id="star3" name="rating" value="3" checked={this.props.movie.avg_rating === 3 ? 'checked' : false} /><label className = "full" htmlFor="star3" title="Meh - 3 stars" onClick={this.rateMovie.bind(null, 3)}></label>
+      <input type="radio" id="star2" name="rating" value="2"  checked={this.props.movie.avg_rating === 2 ? 'checked' : false}/><label className = "full" htmlFor="star2" title="Kinda bad - 2 stars" onClick={this.rateMovie.bind(null, 2)}></label>
+      <input type="radio" id="star1" name="rating" value="1" checked={this.props.movie.avg_rating === 1 ? 'checked' : false} /><label className = "full" htmlFor="star1" title="Sucks big time - 1 star" onClick={this.rateMovie.bind(null, 1)}></label>
 
   </fieldset>
           </div>

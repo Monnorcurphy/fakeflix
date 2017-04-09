@@ -1,20 +1,20 @@
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import MovieIndexItem from '../movie_index_item/movie_index_item_container';
 import SearchPage from '../search/search';
-var Carousel = require('nuka-carousel');
-
+import Carousel from '../carousel/carousel'
 
 
 class MovieIndex extends React.Component{
     constructor(props){
       super(props);
-      this.handleClick = this.handleClick.bind(this);
       this.search = this.search.bind(this);
       this.state = {filter: '', images: false}
       this.sample1 = false
       this.setState = this.setState.bind(this);
+      this.handleClick= this.handleClick.bind(this);
+
     }
 
     componentDidUpdate() {
@@ -35,25 +35,28 @@ class MovieIndex extends React.Component{
       });
     }
 
+    handleClick(url){
+
+      return e => this.props.router.push(url)
+    }
+
     redirectIfLoggedOut() {
       if (!this.props.loggedIn){
         this.props.router.replace("/");
       }
   	}
 
-    handleClick(url){
-      return e => this.props.router.push(url)
-    }
-
     search(parameters){
       let string = `${parameters.target.value}`;
       this.setState({filter: string});
     }
 
+
     render () {
 
       if (!this.sample1){
         this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
+
       }
 
       if (this.state.filter != ''){
@@ -89,27 +92,31 @@ class MovieIndex extends React.Component{
         </div>
       )}
       if (this.sample1){
-
+        if (typeof this.sample1.actors.join === 'function')
+          this.sample1.actors = this.sample1.actors.join(',')
         let movies =[];
         let comedy =[];
         let action =[];
         let sciFi = [];
 
         for (let key in this.props.movies) {
-
           if (movies.length < 50){
             movies.push(<MovieIndexItem searched= {false} key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
           }
+
           if(this.props.movies[key].genre.includes('Comedy')){
             comedy.push(<MovieIndexItem searched= {false}  key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
           }
+
           if(this.props.movies[key].genre.includes('Action')){
             action.push(<MovieIndexItem searched= {false}  key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
           }
+
           if(this.props.movies[key].genre.includes('Sci-Fi') || this.props.movies[key].genre.includes('Fantasy')){
             sciFi.push(<MovieIndexItem searched= {false} key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
           }
         }
+
 
         return (<div className='index-page'>
           <div className='main-header'>
@@ -129,12 +136,7 @@ class MovieIndex extends React.Component{
                 <div className='main-content-splash'>
                   <div className='title-div'>
                   <h1 className='main-content-splash'>{this.sample1.title}</h1>
-                    <div className='movie-button-div'>
-                    <input className='button header-bar' id='unique'
-                      type='submit'
-                      onClick={this.handleClick(`/movie/${this.sample1.id}`)}
-                      value='Go to movie'/>
-                  </div>
+
                   </div>
                   <div className='description-div'>
                   <p className='main-content-splash main-description'>Description: {this.sample1.description}</p>
@@ -148,31 +150,31 @@ class MovieIndex extends React.Component{
                   <div className='actors-div'>
                   <p className='main-content-splash'>Actor(s): {this.sample1.actors}</p>
                   </div>
-
-
                 </div>
                 <img className='main-content-splash' id='splash-poster' src={this.sample1.image_url} onClick={this.handleClick(`/movie/${this.sample1.id}`)}/>
+                  <img className = 'splash-play-button'src='http://res.cloudinary.com/dqiuefax1/image/upload/v1491698763/play_oxkc6l.png'
+
+                  onClick={this.handleClick(`/movie/${this.sample1.id}`)}/>
               </div>
           </div>
-          <div className='main-div'>
-            <h3 className= 'label IMDB-50'>IMDB Top 50</h3>
-            <Carousel className= 'carousel IMDB-50' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={185}>
-              {movies}
-            </Carousel>
-            <h3 className= 'label'>Action</h3>
-            <Carousel className= 'carousel' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170}>
-              {action}
-            </Carousel>
-            <h3 className= 'label'>Comedies</h3>
-            <Carousel className= 'carousel' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170}>
-              {comedy}
-            </Carousel>
-            <h3 className= 'label'>Sci-Fi and Fantasy</h3>
-            <Carousel className= 'carousel bottom' slidesToShow={4} slidesToScroll={2} dragging={true} slideWidth={0.9} initialSlideHeight ={170} >
-              {sciFi}
-            </Carousel>
 
+          <h2>IMDB Top 50</h2>
+          <div className= 'movies'>
+            <Carousel movies={movies}/>
           </div>
+          <h2>Action</h2>
+          <div className= 'action'>
+            <Carousel movies={action}/>
+          </div>
+          <h2>Sci-Fi</h2>
+          <div className= 'action'>
+            <Carousel movies={sciFi}/>
+          </div>
+          <h2>Comedy</h2>
+          <div className= 'action'>
+            <Carousel movies={comedy}/>
+          </div>
+
           <nav className= 'footer'>
             <div className='legal'>
             <p className="copyright">© 2016 Fakeflix. All rights reserved.</p>
@@ -188,7 +190,7 @@ class MovieIndex extends React.Component{
               </div>
             </div>
         </nav>
-        </div>
+      </div>
           )
       }else {
 

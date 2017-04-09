@@ -272,10 +272,26 @@ p.actors{
   font-size: 1.7vw;
 }
 
-img.movie-poster:hover {
-  border-left: red 2px solid;
+img.Movie-poster:hover {
   cursor: pointer;
-  max-height: 210px;
+  transform:scale(1.14);
+  transition: all 110ms ease-in;
+  z-index:1000;
+}
+
+.play-button{
+  height: 40px;
+  right: 65%;
+  bottom: 65%;
+  position: relative;
+  cursor: pointer;
+}
+.splash-play-button{
+  height: 60px;
+  left: 73%;
+  top: 40%;
+  position: relative;
+  cursor: pointer;
 }
 
 img.movie-poster{
@@ -721,7 +737,6 @@ h1.logo{
   margin-top: 7px;
 }
 
-
 div.main-content-splash{
   display: inline-block;
   position: absolute;
@@ -815,7 +830,6 @@ div.content-holder{
 }
 
 #splash-poster:hover{
-  border-bottom: red 2px solid;
   cursor: pointer;
 }
 
@@ -980,4 +994,69 @@ div.loading
   100% {
     transform: translate(0, -1em) rotate(-225deg);
   }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.carousel-outer{
+  height: 350px;
+  width: 90%;
+  position: relative;
+  padding-left: 40px;
+}
+
+.Movie-poster{
+  padding: 10px;
+  max-height: 300px;
+  max-width: 400px;
+}
+
+.carousel{
+  font-size: 0px;
+  height: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.carousel-outer .carousel >div:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+
+.carousel-outer .carousel >div{
+  height: 190px;
+  width: 190px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+}
+
+.arrow{
+  color: white;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  line-height: 15px;
+  position: absolute;
+  top: 50%;
+  top: calc(50%- 15px);
+  cursor:pointer;
+}
+button.arrow.left{
+  left: 0;
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704306/back_1_t6yozi.png);
+  background-size: cover;
+  background-color: white;
+}
+button.arrow.right{
+  right: -40px;
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704303/next_1_z5tu0v.png);
+  background-size: cover;
 }

@@ -10,7 +10,9 @@ class PackageMovies
     attrs_hash = {}
     attrs_hash[:title] = @movie['Title']
     attrs_hash[:description] = @movie['Plot']
-    attrs_hash[:actors] = [@movie['Actors']]
+    if @movie['Actors'].class == String
+      attrs_hash[:actors] = @movie['Actors'].split(',')
+    end
     attrs_hash[:year] = @movie['Year']
     attrs_hash[:runtime] = @movie['Runtime']
     attrs_hash[:genre] = @movie['Genre']
