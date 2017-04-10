@@ -16,6 +16,11 @@ class ActorDetail extends React.Component{
 
 
   componentDidMount(){
+    let actor = this.props.params.actorId.split(' ')
+    if (actor[0] == ''){
+      actor.splice(0, 1)
+    }
+    this.props.params.actorId= actor.join('%20')
     this.props.fetchActor(this.props.params.actorId)
   }
 
@@ -28,9 +33,27 @@ class ActorDetail extends React.Component{
           </p>)
     }
     else{
-      console.log(this.props);
-      return(
+      let films= []
+      let ordered= []
+      for(let film in this.props.filmography){
+        film = this.props.filmography[film]
+        if (film.title){
+          ordered.push(film.title)
+        }
+        ordered.sort()
+        for (let film in ordered){
+          film = ordered[film]
+          films.push( <li key={film} onClick={this.handleClick(`/trailer/${film}`)}>{film}</li>)
+        }
+
+      }
+
+      return(<div>
         <h1 className='Actor Name'>{this.props.params.actorId}</h1>
+        <ul>
+          {films}
+        </ul>
+      </div>
       )
     }
 

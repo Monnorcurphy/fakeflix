@@ -3,8 +3,9 @@ import { logout } from '../../actions/session_actions';
 import ActorDetail from './actor_detail';
 import {fetchActor} from '../../actions/actor_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
-  return ({ownProps})
+  return ({ownProps, filmography: state.actor})
 
 };
 

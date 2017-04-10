@@ -11,6 +11,7 @@ import MovieIndexContainer from './movie_index/movie_index_container';
 import MoviePlayContainer from './movie_play/movie_play_container';
 import Splash from './splash/splash_container';
 import ActorDetail from './actor_detail/actor_detail_container';
+import TrailerPlay from './trailer_play/trailer_play_container'
 
 const Root = ({ store }) => {
 
@@ -38,6 +39,7 @@ const Root = ({ store }) => {
         <Route path="/main" component={MovieIndexContainer} onEnter={_ensureLoggedIn} />
         <Route path="/movie/:movieId" component={MoviePlayContainer} onEnter={_ensureLoggedIn}/>
         <Route path="/actor/:actorId" component={ActorDetail} onEnter={_ensureLoggedIn}/>
+        <Route path="/trailer/:trailerName" component={TrailerPlay} onEnter={_ensureLoggedIn}/>
 
       </Router>
     </Provider>
