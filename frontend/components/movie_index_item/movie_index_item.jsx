@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-var Masonry = require('react-masonry-component');
 
 
 class MovieIndexItem extends React.Component{

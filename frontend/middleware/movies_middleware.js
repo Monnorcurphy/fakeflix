@@ -21,7 +21,6 @@ export default (state) => next => action => {
       fetchMovie(action.id,receiveAMovie, errorCallback);
       return next(action);
     case RATE_MOVIE:
-    
       movieRating({id: action.id, rating: action.rating },receiveAMovie)
       return next(action);
     default:

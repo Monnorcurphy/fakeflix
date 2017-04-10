@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import {fetchMovies} from '../../actions/movie_actions';
-import MovieIndex from './movie_index';
+import Carousel from './carousel';
 import {recieveSearch} from '../../actions/search_actions'
 
 
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MovieIndex);
+)(Carousel);
