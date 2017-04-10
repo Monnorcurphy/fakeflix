@@ -158,20 +158,20 @@ class MovieIndex extends React.Component{
               </div>
           </div>
 
-          <h2>IMDB Top 50</h2>
-          <div className= 'movies'>
+          <h2 className='IMDB-Top-50'>IMDB Top 50</h2>
+          <div className= 'movies IMDB'>
             <Carousel movies={movies}/>
           </div>
           <h2>Action</h2>
-          <div className= 'action'>
+          <div className= 'movies action'>
             <Carousel movies={action}/>
           </div>
           <h2>Sci-Fi</h2>
-          <div className= 'action'>
+          <div className= 'movies action'>
             <Carousel movies={sciFi}/>
           </div>
           <h2>Comedy</h2>
-          <div className= 'action'>
+          <div className= 'movies comedy'>
             <Carousel movies={comedy}/>
           </div>
 

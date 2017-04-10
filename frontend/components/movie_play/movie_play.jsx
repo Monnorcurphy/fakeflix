@@ -36,9 +36,11 @@ class MoviePlay extends React.Component{
 
 
   render(){
+
     if (this.props.movie &&  typeof this.props.movie.actors != String)
         this.props.movie.actors = this.props.movie.actors
     if (this.props.movie && this.props.movie.avg_rating === 0){
+      
       return(
         <div className='movie-play'>
           <nav className='header'>

@@ -26,6 +26,11 @@ body {
 
 }
 
+.movies{
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
 .movie-selection{
   display: flex;
   margin: 25px;
@@ -44,7 +49,7 @@ body {
 
 .trailer-text, .selection-text{
   padding: 10px;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 
 div.login-signup > a{
@@ -601,7 +606,7 @@ input.play{
   z-index: 5;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 
 input.movie-play{
@@ -612,7 +617,7 @@ input.movie-play{
   z-index: 5;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 
 h3.label{
@@ -719,7 +724,7 @@ p.search{
   top: -1%;
   right: 58%;
   position: fixed;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 
 nav >button.header-bar{
@@ -742,7 +747,7 @@ div.main-content-splash{
   position: absolute;
   top: 5%;
   width: 45%;
-  font-size: 2vw;
+  font-size: 1.6vw;
   margin: 20px;
   padding: 10px;
   opacity: .8;
@@ -775,7 +780,7 @@ h1.main-content-splash{
 p.main-content-splash{
   color: white;
   width: 100%;
-  font-size: 2vw;
+  font-size: 1.6vw;
 }
 
 img.main-content-splash{
@@ -1009,9 +1014,13 @@ div.loading
 
 .Movie-poster{
   padding: 10px;
-  max-height: 600px;
+  max-height: 350px;
   max-width: 400px;
   min-height: 320px
+}
+
+.IMDB-Top-50{
+  padding-top: 40px;
 }
 
 .Actor-list{
