@@ -1,0 +1,139 @@
+input.play{
+  position: absolute;
+  top: 80%;
+  left: 95%;
+  padding: 4px;
+  z-index: 5;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.6vw;
+}
+
+input.movie-play{
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  padding: 4px;
+  z-index: 5;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.6vw;
+}
+
+
+h1.exit{
+  color: white;
+  position: fixed;
+  right: 2%;
+  font-size: 40px;
+  padding: 10px;
+}
+
+h1.exit:hover{
+  color: red;
+  cursor: pointer;
+}
+
+div.movie-play{
+  height: 100%;
+  width: 100%;
+}
+
+button.movie-play{
+  position: absolute;
+  right: 2%;
+  top: 0%;
+  cursor: pointer;
+}
+
+div.movie-playing{
+  position: fixed;
+  display: flex;
+  top: 7%;
+  z-index: -1;
+  float: right;
+  border: none;
+  height: 94%;
+  width: 98%;
+  right: 1%;
+  padding: 2px;
+}
+
+iframe.movie-player{
+  width: 100%;
+  height:90%;
+  border: none;
+  background-color: #1A1A1A;
+}
+
+a.movie-play-header{
+  text-decoration: none;
+  color: red;
+  top: 2%;
+  position: absolute;
+  font-size: 30px;
+  left: 2%;
+  z-index: 1
+}
+
+div.hide-these:hover{
+  opacity: .85;
+
+}
+
+div.hide-these{
+  position: absolute;
+  width: 40%;
+  padding: 8px;
+  opacity: 0.0;
+  height: 60%;
+  top: 15%;
+  background: #1A1A1A;
+}
+
+h1.title{
+  top: 5%;
+  color: white;
+  font-size: 2.6vw;
+  padding: 7px;
+  position: absolute;
+}
+
+p.description{
+  position: absolute;
+  padding: 7px;
+  top: 21%;
+  color: white;
+  font-size: 1.8vw;
+  margin: 3px;
+}
+
+p.year{
+  color: white;
+  position: absolute;
+  padding: 7px;
+  top: 47%;
+  font-size: 1.8vw;
+}
+p.genre{
+  color: white;
+  position: absolute;
+  padding: 7px;
+  top: 59%;
+  font-size: 1.8vw;
+}
+p.actors{
+  color: white;
+  position: absolute;
+  padding: 7px;
+  top: 70%;
+  font-size: 1.7vw;
+}
+
+.play-button{
+  height: 40px;
+  right: 65%;
+  bottom: 65%;
+  position: relative;
+  cursor: pointer;
+}

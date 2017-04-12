@@ -1,0 +1,126 @@
+.movie-selection{
+  display: flex;
+  margin: 25px;
+}
+
+
+.moving-search, .moving-trailer{
+  display: block;
+  margin: 25px;
+}
+
+
+.selection-gif, .movie-gif {
+  max-width: 55%;
+  max-height: 300px;
+
+}
+
+.movie-gif {
+  float: right;
+  margin-right: 25px
+}
+
+
+.splash-gif{
+  width: 94%;
+  margin: 3%;
+  margin-top: 70px;
+}
+
+.trailer-text, .selection-text{
+  padding: 10px;
+  font-size: 1.6vw;
+}
+
+
+button.splash-demo{
+  position: absolute;
+  font-size: 2vmax;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+div.login-signup > a{
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 10px;
+}
+
+div.contact-info, div.login-signup{
+  width: 50%;
+}
+
+
+input.login-input{
+  margin-left: 50px;
+  min-width: 200px;
+}
+
+input.button.modal{
+  position: absolute;
+  top: 68%;
+  left: 76%;
+}
+
+input.button.submit.modal{
+  position: absolute;
+  top: 68%;
+  left: 60%;
+}
+
+p.login-modal{
+  margin-left: 50px;
+}
+
+
+h2.attention-line{
+  color: white;
+  font-size: 5vmax;
+}
+
+h2.signup-or-login{
+  text-align: center;
+  color: white;
+}
+
+label.signup-or-login{
+  color: white;
+}
+
+ul.errors{
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  position: fixed;
+  top: 18%;
+  left: 51%;
+  list-style: none;
+}
+
+div.over-demo{
+  position: absolute;
+  top: 20%;
+  margin-left: 10%;
+  color: white;
+  min-width: 200px;
+}
+
+p.tag-line{
+  color: white;
+  font-size: 3vmax;
+}
+
+div.splash-div{
+  height: 960px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}

@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+}
+
+
+div.IMDB-50{
+  background-image:
+    linear-gradient(
+      #1A1A1A,
+      #141414 30%
+    );
+}
+
+div.slider.carousel.bottom{
+  padding-bottom: 55px;
+}
+
+
+carousel-outer{
+  height: 350px;
+  width: 90%;
+  position: relative;
+  padding-left: 40px;
+}
+
+.Movie-poster{
+  padding: 10px;
+  max-height: 350px;
+  max-width: 400px;
+  min-height: 320px
+}
+
+.IMDB-Top-50{
+  padding-top: 40px;
+}
+
+.Actor-list{
+  width: 15%;
+    top: 10%;
+    padding: 5px;
+    padding-left: 40px;
+    background-color: #2196F3;
+    position: absolute;
+}
+
+.carousel{
+  font-size: 0px;
+  height: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.carousel-outer .carousel >div:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+
+.carousel-outer .carousel >div{
+  height: 190px;
+  width: 190px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+}
+
+.arrow{
+  color: white;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  line-height: 15px;
+  position: absolute;
+  top: 50%;
+  top: calc(50%- 15px);
+  cursor:pointer;
+}
+button.arrow.left{
+  left: 0;
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704306/back_1_t6yozi.png);
+  background-size: cover;
+  background-color: white;
+}
+button.arrow.right{
+  right: -40px;
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704303/next_1_z5tu0v.png);
+  background-size: cover;
+}
+
+img.Movie-poster:hover {
+  cursor: pointer;
+  transform:scale(1.14);
+  transition: all 110ms ease-in;
+  z-index:1000;
+}
+
+img.movie-poster{
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  min-width: 55%;
+  min-height: 70%;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 100;
+
+}
+
+h3.IMDB-50{
+  background-color: #1A1A1A;
+}
+
+h3.IMDB-50{
+  position: relative;
+  top: 7%;
+  z-index: 3;
+}

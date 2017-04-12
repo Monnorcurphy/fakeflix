@@ -1,0 +1,123 @@
+a.linkedin, button.login{
+  float: right;
+  position: relative;
+  left: 48%;
+}
+
+a.linkedin, a.github, p.copyright {
+  color: white;
+}
+
+
+.github-div{
+  color: red;
+  right:86%
+}
+
+.linkedin-div{
+  color:red;
+  left:48%
+}
+
+
+nav{
+  display: flex;
+  z-index: 13;
+  width: 100%;
+  height: 9%;
+  opacity: .93;
+  position: fixed;
+  background: #1A1A1A;
+}
+
+nav.header{
+  top: 0%;
+}
+
+div.logout.header-bar{
+  position: absolute;
+    right: 1%;
+    float: right;
+}
+
+h1.logo{
+  color: red;
+  display: flex;
+  top: 0%;
+  position: fixed;
+  font-size: 36px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+
+
+nav.footer{
+  bottom: 0%;
+  display: flex;
+    z-index: 13;
+    width: 100%;
+    height: 7%;
+    opacity: .93;
+    position: fixed;
+    background: #1A1A1A;
+}
+
+.copyright{
+  padding-left: 15px;
+  width: 300px;
+}
+
+nav >button.header-bar{
+  position: fixed;
+  right: 4%;
+  top: 0%
+}
+
+nav.footer > p {
+  color: white;
+  padding-left: 10px;
+}
+
+header.logo{
+  display: flex;
+  width: 50%;
+  position: absolute;
+
+}
+
+nav.header > p{
+  color: white;
+  position: fixed;
+  top: 0%;
+  right: 58%;
+  font-size: 112%;
+}
+a.header-link{
+  text-decoration: none;
+  color: red;
+  top: -7%;
+  position: absolute;
+  font-size: 30px;
+  left: -5%;
+}
+
+.linkedin-div, div.login-div{
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+
+div.legal, div.logo-div{
+  width: 50%;
+  float: left;
+}
+
+div.contact-info > div {
+  color: white;
+  padding-top: 15px;
+}
+
+
+header{
+  position: absolute;
+}
