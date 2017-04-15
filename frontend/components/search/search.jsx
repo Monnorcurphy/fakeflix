@@ -9,8 +9,14 @@ class SearchList extends React.Component{
 
   constructor(props){
     super(props);
+      this.handleClick = this.handleClick.bind(this)
 
   }
+
+  handleClick(url){
+    return e => this.props.router.push(url)
+  }
+
 
   componentDidUpdate(){
     this.focusSearch()
@@ -39,9 +45,11 @@ class SearchList extends React.Component{
         }
         for (let actor in this.props.movies[key].actors){
           actor = this.props.movies[key].actors[actor].toLowerCase()
-          if ((actor.match(this.props.search.toLowerCase())) && !(actors[actor]= true))
+          console.log(!(actors[actor] = true));
+          if ((actor.match(this.props.search.toLowerCase())) && !(actor in actors))
+            // console.log(actors[actor]);
             actors[this.props.movies[key].actors[actor]]= true
-            detail.push(<span className='actor-name' key={actor}><ActorDetail  searched= {true} actor={actor}/></span>)
+            detail.push(<span className='actor-name' key={actor} onClick= {this.handleClick(`/actor/${actor}`)}><ActorDetail  searched={true} actor={actor}/></span>)
 
         }
       }
@@ -55,6 +63,7 @@ class SearchList extends React.Component{
 
               </div>
               <div className = 'Actor-list'>
+                <h1 className='Actor-list-heading'>Actors</h1>
                 {detail}
               </div>
         </div>

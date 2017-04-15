@@ -20,12 +20,12 @@ class ActorDetail extends React.Component{
     if (actor[0] == ''){
       actor.splice(0, 1)
     }
-    this.props.params.actorId= actor.join('%20')
-    this.props.fetchActor(this.props.params.actorId)
+    actor = actor.join('%20')
+    this.props.fetchActor(actor)
   }
 
   render(){
-
+    // console.log(this.props);
     if (this.props.searched){
       return(
           <p onClick={this.handleClick(`/actor/${this.props.actor}`)}>
@@ -48,7 +48,8 @@ class ActorDetail extends React.Component{
 
       }
 
-      return(<div>
+      return(<div key={this.props.params.actorId}>
+
         <h1 className='Actor Name'>{this.props.params.actorId}</h1>
         <ul>
           {films}
