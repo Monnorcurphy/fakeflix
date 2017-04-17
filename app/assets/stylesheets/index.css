@@ -36,7 +36,6 @@ img.movie-searched-poster{
 }
 
 img.movie-searched-poster:hover{
-  border-left: red 2px solid;
   cursor: pointer;
   max-height: 315px;
 }

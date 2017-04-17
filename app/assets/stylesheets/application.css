@@ -68,7 +68,7 @@ input.button {
   font-size: 14px;
   border-radius: 5px;
   color: white;
-  background-color: #E50914 !important;
+  background-color: #E50914;
   border: none;
   padding: 7px;
   margin: 5px;
@@ -82,7 +82,7 @@ button {
   font-size: 14px;
   border-radius: 5px;
   color: white;
-  background-color: #E50914 !important;
+  background-color: #E50914;
   border: none;
   padding: 10px;
   margin-top: 10px;

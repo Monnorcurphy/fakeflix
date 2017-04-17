@@ -65,6 +65,7 @@ class SearchList extends React.Component{
               <div className = 'Actor-list'>
                 <h1 className='Actor-list-heading'>Actors</h1>
                 {detail}
+                <button className='Actor-Search'>Search: {this.props.search}</button>
               </div>
         </div>
       )
