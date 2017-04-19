@@ -17,6 +17,18 @@ class SearchList extends React.Component{
     return e => this.props.router.push(url)
   }
 
+  capitalize(name){
+    name = name.split(' ');
+    let actor = '';
+    for (let i = 0; i < name.length; i ++) {
+      if ((name[i] === '') || (name[i]=== ' ')){
+        continue
+      }else{
+        actor += name[i][0].toUpperCase() + name[i].slice(0 + 1) + ' ';
+      }
+    }
+    return actor
+  }
 
   componentDidUpdate(){
     this.focusSearch()
@@ -44,7 +56,7 @@ class SearchList extends React.Component{
           searched.push(<MovieIndexItem searched= {true}  key={this.props.movies[key].title} movie={this.props.movies[key]}/>)
         }
         for (let actor in this.props.movies[key].actors){
-          actor = this.props.movies[key].actors[actor].toLowerCase()
+          actor = this.capitalize(this.props.movies[key].actors[actor])
 
           if(actor.toLowerCase().match(this.props.search.toLowerCase()) && (Object.keys(actors).length < 20) && (!(actor in actors))){
             actors[actor] = true
@@ -60,12 +72,12 @@ class SearchList extends React.Component{
               <Masonry className='searched-movies' elementType={'ul'} options={{fitWidth: true, columnWidth: 100 }}>
                 {searched}
               </Masonry>
-
+              <button className= 'Movie-Search' onClick={this.handleClick(`/trailer/${this.props.search}`)}>Search movies for: {this.props.search}</button>
               </div>
               <div className = 'Actor-list'>
                 <h1 className='Actor-list-heading'>Actors</h1>
                 {detail}
-                <button className='Actor-Search'>Search: {this.props.search}</button>
+                <button className='Actor-Search' onClick={this.handleClick(`/actor/${this.props.search}`)}>Search: {this.props.search}</button>
               </div>
         </div>
       )

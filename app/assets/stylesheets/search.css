@@ -2,6 +2,18 @@ div.search-results{
   width: 85%;
   height: 100%;
   margin-left: 15%;
-  position: absolute;
-  top: 7%;
+  padding: 100px 0px 200px 14px;
+}
+
+.Movie-Search{
+  width: 80%;
+  height: 60px;
+  font-size: 2.1em;
+}
+
+.search-clear{
+  border: 1px solid white;
+  background-color: #1a1a1a;
+  color: white;
+  float: right;
 }

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import MovieIndexItem from '../movie_index_item/movie_index_item_container';
@@ -14,29 +13,23 @@ class MovieIndex extends React.Component{
       this.sample1 = false
       this.setState = this.setState.bind(this);
       this.handleClick= this.handleClick.bind(this);
-
+      this.emptySearch = this.emptySearch.bind(this)
     }
 
     componentDidUpdate() {
       let that = this;
       this.redirectIfLoggedOut();
-
   	}
 
     componentWillMount(){
       this.props.fetchMovies();
     }
 
-    componentDidMount(){
-      let that = this;
-      sync(function* (){
-        yield sleep(2500);
-        that.forceUpdate()
-      });
+    emptySearch(){
+      this.setState({filter: ''});
     }
 
     handleClick(url){
-
       return e => this.props.router.push(url)
     }
 
@@ -56,18 +49,18 @@ class MovieIndex extends React.Component{
 
       if (!this.sample1){
         this.sample1= this.props.movies[(Math.floor(Math.random() *50) + 1)]
-
       }
 
       if (this.state.filter != ''){
         return(
           <div>
             <nav className='header'>
-              <Link to="/" className="header-bar">
+              <Link to="/" className="header-bar" onClick={this.emptySearch}>
                   <h1 className= 'logo'>FAKEFLIX</h1>
               </Link>
             <div className='search header-bar'>
               <input className='search header-bar' type='text' onChange={this.search} value={this.state.filter} autoFocus/>
+              <button className='search-clear' onClick= {this.emptySearch}>Clear</button>
             </div>
             <div className='logout header-bar'>
               <button className="logout header-bar" onClick={this.props.logout}>Log Out</button>
@@ -204,27 +197,6 @@ class MovieIndex extends React.Component{
     }
 
 };
-
-function sync(generator){
-    var _generator = generator();
-
-    function done(){
-        var result = _generator.next().value;
-        if(result instanceof Promise){
-            result.then(done);
-        }
-    }
-
-    done();
-}
-
-
-function sleep(ms){
-    return new Promise(function(res, rej){
-        setTimeout(res, ms);
-    });
-}
-
 
 
 export default MovieIndex;

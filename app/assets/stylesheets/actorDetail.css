@@ -1,0 +1,20 @@
+.Actor-Name{
+  margin: auto;
+  padding-top: 125px;
+  font-size: 4em;
+}
+
+.Actor-Image{
+  max-width: 200px;
+  margin: auto;
+  width: 50%;
+}
+
+
+.Actor-Details{
+  width: 80%;
+    margin: auto;
+    display: inline-flex;
+    flex-direction: column;
+    padding-top: 105px;
+}

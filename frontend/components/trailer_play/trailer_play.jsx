@@ -11,9 +11,11 @@ class TrailerPlay extends React.Component{
 
   componentDidMount(){
     let trailer = this.props.params.trailerId.split(' ')
+    
     if (trailer[0] == ''){
       trailer.splice(0, 1)
     }
+
     trailer= trailer.join('+')
     this.props.fetchTrailer(trailer)
   }
@@ -30,9 +32,11 @@ class TrailerPlay extends React.Component{
 
   render(){
     if (this.props.trailer.etag){
-      let trailer = String(this.props.trailer.items[0].id.videoId).split('').join('')
+
+      let trailer= String(this.props.trailer.items[0].id.videoId).split('').join('')
+
       this.props.trailer.etag= trailer
-      console.log(this.props.trailer.etag);
+
     }
     if (this.props.trailer){
       return(
@@ -66,7 +70,7 @@ class TrailerPlay extends React.Component{
           </nav>
           </div>
 
-      
+
       )
     }
 

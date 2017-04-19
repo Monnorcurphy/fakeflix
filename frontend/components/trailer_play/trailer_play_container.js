@@ -6,6 +6,7 @@ import TrailerPlay from './trailer_play';
 
 
 const mapStateToProps = (state, ownProps) => {
+  
   return ({loggedIn: Boolean(state.session.currentUser),
     trailer: state.trailer})
 };

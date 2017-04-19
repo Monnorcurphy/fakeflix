@@ -4,11 +4,15 @@ import merge from 'lodash/merge';
 
 
 const ActorReducer = (state = {}, action) => {
+
   switch(action.type) {
     case RECEIVE_ACTOR:
-      return merge({}, state, action.actor);
+    action.id.results = action.id.results[0]
+
+      return merge({}, state, action.id.results);
     case RECEIVE_ACTOR_MOVIES:
-      return merge({}, state, action.movies.cast);
+
+      return merge({}, state, action.movies);
     default:
       return state;
   }

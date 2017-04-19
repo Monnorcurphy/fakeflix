@@ -5,7 +5,12 @@ import {fetchActor} from '../../actions/actor_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  return ({ownProps, filmography: state.actor})
+
+  return ({
+    loggedIn: Boolean(state.session.currentUser),
+    ownProps,
+    filmography: state.actor.cast,
+    actor: state.actor})
 
 };
 

@@ -56,9 +56,10 @@ carousel-outer{
 
 .carousel{
   font-size: 0px;
-  height: 600px;
-  white-space: nowrap;
-  overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+    padding-left: 40px;
 }
 
 .carousel-outer .carousel >div:before {
