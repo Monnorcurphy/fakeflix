@@ -6,11 +6,24 @@ import {fetchActor} from '../../actions/actor_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-  return ({
-    loggedIn: Boolean(state.session.currentUser),
-    ownProps,
-    filmography: state.actor.cast,
-    actor: state.actor})
+  if (state.actor.name && ownProps.params){
+    if(state.actor.name != ownProps.params.actorId){
+      return ({loggedIn: Boolean(state.session.currentUser),
+        ownProps})
+    }
+    else{
+      return ({
+        loggedIn: Boolean(state.session.currentUser),
+        ownProps,
+        filmography: state.actor.cast,
+        actor: state.actor})}
+    }
+    else{
+      return ({loggedIn: Boolean(state.session.currentUser),
+        ownProps})
+
+
+  }
 
 };
 

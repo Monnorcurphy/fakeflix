@@ -15,18 +15,29 @@ class ActorDetail extends React.Component{
     return e => this.props.router.push(url)
   }
 
-  componentDidMount(){
-    if(this.props.params.actorId){
-      let actor = this.props.params.actorId.split(' ')
-      if (actor[0] == ''){
-        actor.splice(0, 1)
-      }
-      actor = actor.join('%20')
-      this.props.fetchActor(actor)
-    }
+  // componentDidMount(){
+  //   if(this.props.ownProps.params.actorId){
+  //     let actor = this.props.ownProps.params.actorId.split(' ')
+  //     if (actor[0] == ''){
+  //       actor.splice(0, 1)
+  //     }
+  //     actor = actor.join('%20')
+  //     this.props.fetchActor(actor)
+  //   }
+  //
+  // }
 
-  }
-
+  // componentWillMount(){
+  //
+  //   if(this.props.ownProps.params.actorId){
+  //     let actor = this.props.ownProps.params.actorId.split(' ')
+  //     if (actor[0] == ''){
+  //       actor.splice(0, 1)
+  //     }
+  //     actor = actor.join('%20')
+  //     this.props.fetchActor(actor)
+  //   }
+  // }
 
 
 
@@ -40,6 +51,15 @@ class ActorDetail extends React.Component{
           </p>)
     }
     else if(!(this.props.filmography)){
+
+      if(this.props.ownProps.params){
+        let actor = this.props.ownProps.params.actorId.split(' ')
+        if (actor[0] == ''){
+          actor.splice(0, 1)
+        }
+        actor = actor.join('%20')
+        this.props.fetchActor(actor)
+      }
       return (<div className='loading'><div id="loader">
         <div id="box"></div>
         <div id="hill"></div>
@@ -59,7 +79,7 @@ class ActorDetail extends React.Component{
         }
 
 
-        console.log(this.props.actor);
+
       return(<div key={this.props.params.actorId}>
         <div>
           <nav className='header'>
