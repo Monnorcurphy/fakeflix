@@ -15,29 +15,20 @@ class ActorDetail extends React.Component{
     return e => this.props.router.push(url)
   }
 
-  // componentDidMount(){
-  //   if(this.props.ownProps.params.actorId){
-  //     let actor = this.props.ownProps.params.actorId.split(' ')
-  //     if (actor[0] == ''){
-  //       actor.splice(0, 1)
-  //     }
-  //     actor = actor.join('%20')
-  //     this.props.fetchActor(actor)
-  //   }
-  //
-  // }
+  capitalize(name){
 
-  // componentWillMount(){
-  //
-  //   if(this.props.ownProps.params.actorId){
-  //     let actor = this.props.ownProps.params.actorId.split(' ')
-  //     if (actor[0] == ''){
-  //       actor.splice(0, 1)
-  //     }
-  //     actor = actor.join('%20')
-  //     this.props.fetchActor(actor)
-  //   }
-  // }
+    name = name.split(' ');
+    let actor = '';
+    for (let i = 0; i < name.length; i ++) {
+      if ((name[i] === '') || (name[i]=== ' ')){
+        continue
+      }else{
+        actor += name[i][0].toUpperCase() + name[i].slice(0 + 1) +' '
+      }
+    }
+    return actor
+  }
+
 
 
 
@@ -46,7 +37,7 @@ class ActorDetail extends React.Component{
     if (this.props.searched){
 
       return(
-          <p onClick={this.handleClick(`/actor/${this.props.ownProps.actor}`)}>
+          <p className='Search-display' onClick={this.handleClick(`/actor/${this.props.ownProps.actor}`)}>
             {this.props.ownProps.actor}
           </p>)
     }
@@ -54,9 +45,6 @@ class ActorDetail extends React.Component{
 
       if(this.props.ownProps.params){
         let actor = this.props.ownProps.params.actorId.split(' ')
-        if (actor[0] == ''){
-          actor.splice(0, 1)
-        }
         actor = actor.join('%20')
         this.props.fetchActor(actor)
       }
@@ -95,7 +83,7 @@ class ActorDetail extends React.Component{
         </nav>
         <div className ='Actor-Details'>
           <img className='Actor-Image' src={`https://image.tmdb.org/t/p/original/${this.props.actor.profile_path}`} />
-        <h1 className='Actor-Name'>{this.props.params.actorId}</h1>
+        <h1 className='Actor-Name'>{this.capitalize(this.props.params.actorId)}</h1>
         </div>
         <div>
           <Masonry className='searched-movies' elementType={'ul'} options={{fitWidth: true, columnWidth: 100 }}>

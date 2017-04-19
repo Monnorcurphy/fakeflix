@@ -57,8 +57,9 @@ class Carousel extends React.Component{
         return (<div className='index-page'>
         {}
         <div className= 'carousel-outer'>
+          <button className='arrow left' onClick={this.prevMovies}></button>
           <div className='carousel'>
-            <button className='arrow left' onClick={this.prevMovies}></button>
+
             <div className= 'images'>{
 
                   this.props.movies.slice(this.state.idx1, this.state.idx2).map((film,idx) =>
@@ -69,13 +70,9 @@ class Carousel extends React.Component{
 
                     </span>)}
 
-            </div>
-              <button className='arrow right' onClick={this.nextMovies}></button>
+            </div>  
           </div>
-
-
-
-
+            <button className='arrow right' onClick={this.nextMovies}></button>
 
       </div>
     </div>

@@ -80,7 +80,6 @@ carousel-outer{
 }
 
 .arrow{
-  color: white;
   text-align: center;
   height: 30px;
   width: 30px;
@@ -89,17 +88,24 @@ carousel-outer{
   top: 50%;
   top: calc(50%- 15px);
   cursor:pointer;
+  background-color: white;
+  border: 1px solid black;
+  position: relative;
+
 }
 button.arrow.left{
   left: 0;
-  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704306/back_1_t6yozi.png);
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1492584250/back_2_qeq6ck.png);
   background-size: cover;
-  background-color: white;
+  top: 189px;
+
 }
 button.arrow.right{
   right: -40px;
-  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1491704303/next_1_z5tu0v.png);
+  background-image: url(http://res.cloudinary.com/dqiuefax1/image/upload/v1492584252/next_2_dllhyh.png);
   background-size: cover;
+  left: 81%;
+  bottom: 207px;
 }
 
 img.Movie-poster:hover {

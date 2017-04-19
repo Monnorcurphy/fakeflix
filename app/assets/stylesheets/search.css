@@ -17,3 +17,12 @@ div.search-results{
   color: white;
   float: right;
 }
+
+
+.actor-name{
+  cursor: pointer;
+}
+
+.Search-display{
+  font-size: 1.4em;
+}

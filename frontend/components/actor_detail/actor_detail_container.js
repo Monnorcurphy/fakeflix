@@ -7,7 +7,7 @@ import {fetchActor} from '../../actions/actor_actions';
 const mapStateToProps = (state, ownProps) => {
 
   if (state.actor.name && ownProps.params){
-    if(state.actor.name != ownProps.params.actorId){
+    if(state.actor.name.toLowerCase() != ownProps.params.actorId.toLowerCase()){
       return ({loggedIn: Boolean(state.session.currentUser),
         ownProps})
     }
