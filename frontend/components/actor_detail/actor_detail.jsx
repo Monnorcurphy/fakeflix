@@ -15,6 +15,22 @@ class ActorDetail extends React.Component{
     return e => this.props.router.push(url)
   }
 
+  componentWillMount(){
+    if(this.props.ownProps.params){
+      let actor = this.props.ownProps.params.actorId.split(' ')
+      actor = actor.join('%20')
+      this.props.fetchActor(actor)
+    }
+  }
+
+  componentDidMount(){
+    if(this.props.ownProps.params){
+      let actor = this.props.ownProps.params.actorId.split(' ')
+      actor = actor.join('%20')
+      this.props.fetchActor(actor)
+    }
+  }
+
   capitalize(name){
 
     name = name.split(' ');
@@ -43,11 +59,6 @@ class ActorDetail extends React.Component{
     }
     else if(!(this.props.filmography)){
 
-      if(this.props.ownProps.params){
-        let actor = this.props.ownProps.params.actorId.split(' ')
-        actor = actor.join('%20')
-        this.props.fetchActor(actor)
-      }
       return (<div className='loading'><div id="loader">
         <div id="box"></div>
         <div id="hill"></div>
