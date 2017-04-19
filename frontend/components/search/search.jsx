@@ -45,13 +45,13 @@ class SearchList extends React.Component{
         }
         for (let actor in this.props.movies[key].actors){
           actor = this.props.movies[key].actors[actor].toLowerCase()
-          console.log(!(actors[actor] = true));
-          if ((actor.match(this.props.search.toLowerCase())) && !(actor in actors))
-            // console.log(actors[actor]);
-            actors[this.props.movies[key].actors[actor]]= true
-            detail.push(<span className='actor-name' key={actor} onClick= {this.handleClick(`/actor/${actor}`)}><ActorDetail  searched={true} actor={actor}/></span>)
 
-        }
+          if(actor.toLowerCase().match(this.props.search.toLowerCase()) && (Object.keys(actors).length < 20) && (!(actor in actors))){
+            actors[actor] = true
+            detail.push(<span className='actor-name' key={actor} onClick= {this.handleClick(`/actor/${actor}`)}><ActorDetail  searched={true} actor={actor}/></span>)
+          }
+
+          }
       }
 
       return(

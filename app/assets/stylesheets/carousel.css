@@ -85,7 +85,6 @@ carousel-outer{
   width: 30px;
   display: inline-block;
   line-height: 15px;
-  position: absolute;
   top: 50%;
   top: calc(50%- 15px);
   cursor:pointer;
