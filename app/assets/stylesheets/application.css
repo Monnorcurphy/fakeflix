@@ -19,14 +19,17 @@
 
 /* I have put modularized the css files, and listed them below for ease of navigation
 
-Carousel
-Head-footer
-Index
-Loader
-Movie-play
-Rating-star
-Search
-Splash
+Carousel- holds the information for the carousels on the main
+index page
+
+Head-footer- holds the header and footer css
+
+Index the main page css
+Loader the loading image that appears when entering the website
+Movie-play the css for the movie play holder
+Rating-star the ratings of trailers in the movie play area
+Search the search page css
+Splash the first page users see, before they are logged in
 
 */
 

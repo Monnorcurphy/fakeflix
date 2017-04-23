@@ -58,7 +58,6 @@ class ActorDetail extends React.Component{
           </p>)
     }
     else if(!(this.props.filmography)){
-
       return (<div className='loading'><div id="loader">
         <div id="box"></div>
         <div id="hill"></div>
