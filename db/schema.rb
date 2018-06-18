@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161105061816) do
     t.text     "description",              null: false
     t.integer  "year",                     null: false
     t.string   "genre",                    null: false
-    t.integer  "imdb_id"
+    t.string   "imdb_id"
     t.integer  "runtime"
     t.integer  "avg_rating",  default: 0
     t.datetime "created_at",               null: false
@@ -40,16 +40,6 @@ ActiveRecord::Schema.define(version: 20161105061816) do
   end
 
   add_index "movies", ["title"], name: "index_movies_on_title", using: :btree
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "rating",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "ratings", ["rating"], name: "index_ratings_on_rating", using: :btree
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",                     null: false

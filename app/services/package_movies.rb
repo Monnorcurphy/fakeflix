@@ -1,12 +1,15 @@
 class PackageMovies
   attr_reader :movie, :errors
 
-  def initialize(movie, movie_url)
+ def initialize(movie, movie_url)
     @movie = movie
+    puts @movie
     @movie_url = movie_url
   end
 
   def package_movie
+    puts 'okay, we here'
+    puts "#{@movie} is there a thing?".red
     attrs_hash = {}
     attrs_hash[:title] = @movie['Title']
     attrs_hash[:description] = @movie['Plot']
@@ -26,6 +29,8 @@ class PackageMovies
       @errors = movie.errors
       return false
     end
+    
+    puts "there"
     puts "#{@movie['Title']} has been added to the database!".green
     true
   end
