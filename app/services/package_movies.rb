@@ -3,12 +3,10 @@ class PackageMovies
 
  def initialize(movie, movie_url)
     @movie = movie
-    puts @movie
     @movie_url = movie_url
   end
 
   def package_movie
-    puts 'okay, we here'
     puts "#{@movie} is there a thing?".red
     attrs_hash = {}
     attrs_hash[:title] = @movie['Title']
@@ -29,8 +27,6 @@ class PackageMovies
       @errors = movie.errors
       return false
     end
-    
-    puts "there"
     puts "#{@movie['Title']} has been added to the database!".green
     true
   end
