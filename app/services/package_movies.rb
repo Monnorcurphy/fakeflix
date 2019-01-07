@@ -1,9 +1,14 @@
 class PackageMovies
   attr_reader :movie, :errors
 
+<<<<<<< HEAD
  def initialize(movie, movie_url)
+=======
+  def initialize(movie, movie_url, actors_url)
+>>>>>>> edbe587b0d9685d22f89b9468e5cdcef0dae6c3a
     @movie = movie
     @movie_url = movie_url
+    @actors_url = actors_url
   end
 
   def package_movie
@@ -30,5 +35,27 @@ class PackageMovies
     puts "#{@movie['Title']} has been added to the database!".green
     true
   end
+
+  def package_actor(actor)
+    if (actor) and (@actors_url[actor]) and (@actors_url[actor]["results"]) and (@actors_url[actor]["results"][0])
+      attrs_hash= {}
+      attrs_hash[:name] = actor
+      attrs_hash[:db_id] = @actors_url[actor]["results"][0]["id"]
+      attrs_hash
+    end
+  end
+
+  def create_actor
+    @actors_url.keys().each do |actor|
+      unless Actor.create(package_actor(actor))
+        @errors = actor.errors
+        return false
+      end
+
+    end
+
+  end
+
+
 
 end
