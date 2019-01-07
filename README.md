@@ -51,3 +51,10 @@ There are still a couple of features that have yet to be implemented into this a
 An ability to Sort trailers by IMDB rating and by Actors
 An ability to for all movies an actor has been in.
 A user profile page
+
+
+###Dev
+
+To run the app you run rails server
+
+To run the rake task you run bundle exec rake movies:populate
